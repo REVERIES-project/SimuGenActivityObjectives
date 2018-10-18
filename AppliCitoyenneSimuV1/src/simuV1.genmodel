@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/AppliCitoyenneSimuV1/src" modelPluginID="AppliCitoyenneSimuV1"
+    modelName="SimuV1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" copyrightFields="false" importOrganizing="true">
+  <foreignModel>simuV1.ecore</foreignModel>
+  <genPackages prefix="SimuV1" basePackage="AppliCitoyenne" disposableProviderFactory="true"
+      ecorePackage="simuV1.ecore#/">
+    <genClasses ecoreClass="simuV1.ecore#//Context">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Context/zone"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Context/profile"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//AppDesc">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/objective"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/botanicalflore"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//InventoryObjective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//InventoryObjective/name"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//LearningObjective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//LearningObjective/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//Zone"/>
+    <genClasses ecoreClass="simuV1.ecore#//ZoneCirculaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//ZoneCirculaire/rayon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//ZoneCirculaire/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//ZoneCirculaire/y"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Profile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Profile/firstname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Profile/lastname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Profile/inventoryprofile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Profile/botanicalprofile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Profile/gameprofile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Profile/botanicalsurvey"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Data">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Data/profiles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Data/botanicalsurveys"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//InventoryProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//InventoryProfile/inventorypref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//InventoryProfile/botanicalstat"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//BotanicalProfile"/>
+    <genClasses ecoreClass="simuV1.ecore#//GameProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameProfile/gametypepref"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//BotanicalSurvey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalSurvey/profile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//BotanicalSurvey/date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalSurvey/poi"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalSurvey/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//BotanicalSurvey/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//BotanicalSurvey/reliabilityScore"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//BasicSurvey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//BasicSurvey/confirmationsurvey"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//BasicSurvey/additionalsurvey"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//ConfirmationSurvey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//ConfirmationSurvey/basicsurvey"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//AdditionalSurvey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//AdditionalSurvey/basicsurvey"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//POI">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//POI/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//POI/x"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Activity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/inventoryobjective"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/learningobjective"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/profile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/gameobjective"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//BotanicalFlore">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalFlore/family"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Objectives">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objectives/learningobjective"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objectives/inventoryobjective"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objectives/gameobjective"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Species">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Species/name"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Gender">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Gender/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Gender/species"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Family">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Family/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Family/gender"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//Target"/>
+    <genClasses ecoreClass="simuV1.ecore#//InventoryPref">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//InventoryPref/inventoryobjective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//InventoryPref/ponderation"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//GameObjective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameObjective/name"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//BotanicalStat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//BotanicalStat/directIdentification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalStat/target"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//GameTypePref">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameTypePref/ponderation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameTypePref/gameobjective"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

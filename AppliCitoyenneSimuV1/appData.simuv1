@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simuV1:AppDesc xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simuV1="simuV1">
+  <objective>
+    <learningobjective name="Identify a species"/>
+    <learningobjective name="Identify whatever species of a specific gender"/>
+    <learningobjective name="Use the FOLIA tooling with a leave picture"/>
+    <learningobjective name="Use the FOLIA tooling with a bark picture"/>
+    <learningobjective name="Use the determination key"/>
+    <learningobjective name="Use the determination key with a specific criterion"/>
+    <inventoryobjective name="Make a survey"/>
+    <inventoryobjective name="Confirm or infirm an existent survey"/>
+    <inventoryobjective name="Add additional data to an existent survey"/>
+    <gameobjective name="Play a solo game"/>
+    <gameobjective name="Play a persistent solo game"/>
+    <gameobjective name="Play a collaborative or cooperative game"/>
+    <gameobjective name="Play a competitive game"/>
+    <gameobjective name="Play a collaborative or cooperative persistent game"/>
+    <gameobjective name="Play a competitive persistent game"/>
+  </objective>
+  <botanicalflore>
+    <family name="Fagaceae">
+      <gender name="Quercus">
+        <species name="Quercus robur"/>
+        <species name="Quercus petraea"/>
+      </gender>
+    </family>
+  </botanicalflore>
+</simuV1:AppDesc>

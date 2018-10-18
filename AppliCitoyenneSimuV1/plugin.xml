@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated simuV1 -->
+      <package
+            uri="simuV1"
+            class="AppliCitoyenne.simuV1.SimuV1Package"
+            genModel="src/simuV1.genmodel"/>
+   </extension>
+
+</plugin>
