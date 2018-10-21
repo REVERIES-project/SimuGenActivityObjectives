@@ -202,15 +202,6 @@ public interface SimuV1Factory extends EFactory {
 	Family createFamily();
 
 	/**
-	 * Returns a new object of class '<em>Inventory Pref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Inventory Pref</em>'.
-	 * @generated
-	 */
-	InventoryPref createInventoryPref();
-
-	/**
 	 * Returns a new object of class '<em>Game Objective</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

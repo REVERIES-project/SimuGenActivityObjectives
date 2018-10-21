@@ -7,8 +7,8 @@ import AppliCitoyenne.simuV1.BasicSurvey;
 import AppliCitoyenne.simuV1.SimuV1Package;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -37,6 +37,7 @@ public class AdditionalSurveyImpl extends BotanicalSurveyImpl implements Additio
 	 * @ordered
 	 */
 	protected BasicSurvey basicsurvey;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

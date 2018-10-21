@@ -75,7 +75,6 @@ public class SimuV1FactoryImpl extends EFactoryImpl implements SimuV1Factory {
 			case SimuV1Package.SPECIES: return createSpecies();
 			case SimuV1Package.GENDER: return createGender();
 			case SimuV1Package.FAMILY: return createFamily();
-			case SimuV1Package.INVENTORY_PREF: return createInventoryPref();
 			case SimuV1Package.GAME_OBJECTIVE: return createGameObjective();
 			case SimuV1Package.BOTANICAL_STAT: return createBotanicalStat();
 			case SimuV1Package.GAME_TYPE_PREF: return createGameTypePref();
@@ -282,16 +281,6 @@ public class SimuV1FactoryImpl extends EFactoryImpl implements SimuV1Factory {
 	public Family createFamily() {
 		FamilyImpl family = new FamilyImpl();
 		return family;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InventoryPref createInventoryPref() {
-		InventoryPrefImpl inventoryPref = new InventoryPrefImpl();
-		return inventoryPref;
 	}
 
 	/**

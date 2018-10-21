@@ -1,87 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simuV1:Data xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simuV1="simuV1">
-  <profiles firstname="Jean" lastname="Neymar" botanicalsurvey="//@botanicalsurveys.1">
-    <inventoryprofile>
-      <inventorypref ponderation="8">
-        <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.0"/>
-      </inventorypref>
-      <inventorypref ponderation="1">
-        <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.1"/>
-      </inventorypref>
-      <inventorypref ponderation="1">
-        <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.2"/>
-      </inventorypref>
-    </inventoryprofile>
+  <profiles firstname="A" lastname="A" botanicalsurvey="//@botanicalsurveys.0 //@botanicalsurveys.3 //@botanicalsurveys.7">
+    <inventoryprofile/>
     <botanicalprofile/>
     <gameprofile>
       <gametypepref ponderation="5">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.2"/>
       </gametypepref>
-      <gametypepref>
+      <gametypepref ponderation="5">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.4"/>
       </gametypepref>
-      <gametypepref>
+      <gametypepref ponderation="2">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.3"/>
       </gametypepref>
       <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.5"/>
       </gametypepref>
-      <gametypepref ponderation="3">
+      <gametypepref ponderation="8">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.1"/>
       </gametypepref>
-      <gametypepref ponderation="7">
+      <gametypepref ponderation="8">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.0"/>
       </gametypepref>
     </gameprofile>
   </profiles>
-  <profiles firstname="Justin" lastname="Doua" botanicalsurvey="//@botanicalsurveys.3 //@botanicalsurveys.0 //@botanicalsurveys.2">
-    <inventoryprofile>
-      <inventorypref ponderation="3">
-        <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.2"/>
-      </inventorypref>
-      <inventorypref ponderation="3">
-        <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.1"/>
-      </inventorypref>
-      <inventorypref ponderation="3">
-        <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.0"/>
-      </inventorypref>
-    </inventoryprofile>
-    <botanicalprofile/>
+  <profiles firstname="B" lastname="B" botanicalsurvey="//@botanicalsurveys.1 //@botanicalsurveys.5">
+    <inventoryprofile/>
+    <botanicalprofile noInterest="true"/>
     <gameprofile>
-      <gametypepref>
+      <gametypepref ponderation="3">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.2"/>
       </gametypepref>
       <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.4"/>
       </gametypepref>
-      <gametypepref ponderation="4">
+      <gametypepref ponderation="10">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.3"/>
       </gametypepref>
-      <gametypepref ponderation="6">
+      <gametypepref ponderation="8">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.5"/>
       </gametypepref>
-      <gametypepref ponderation="1">
+      <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.1"/>
       </gametypepref>
-      <gametypepref ponderation="3">
+      <gametypepref ponderation="1">
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.0"/>
       </gametypepref>
     </gameprofile>
   </profiles>
-  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.1" date="2018-10-05T00:00:00.000+0200" id="R1">
-    <poi y="545" x="400"/>
+  <profiles firstname="C" lastname="C" botanicalsurvey="//@botanicalsurveys.2 //@botanicalsurveys.4 //@botanicalsurveys.6 //@botanicalsurveys.8">
+    <inventoryprofile/>
+    <botanicalprofile noInterest="true"/>
+    <gameprofile noInterest="true"/>
+  </profiles>
+  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.0" date="2018-10-05T00:00:00.000+0200" id="A1" reliabilityScore="2" confirmationsurvey="//@botanicalsurveys.1" additionalsurvey="//@botanicalsurveys.2">
+    <poi y="9" x="13"/>
     <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.1"/>
   </botanicalsurveys>
-  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.0" date="2018-10-05T00:00:00.000+0200" id="R2">
-    <poi y="505" x="610"/>
+  <botanicalsurveys xsi:type="simuV1:ConfirmationSurvey" profile="//@profiles.1" date="2018-10-05T00:00:00.000+0200" id="B1" reliabilityScore="3" basicsurvey="//@botanicalsurveys.0">
+    <poi y="9" x="13"/>
+    <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.1"/>
+  </botanicalsurveys>
+  <botanicalsurveys xsi:type="simuV1:AdditionalSurvey" profile="//@profiles.2" date="2018-10-20T00:00:00.000+0200" id="C4" basicsurvey="//@botanicalsurveys.0">
+    <poi y="9" x="13"/>
+    <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.1"/>
+  </botanicalsurveys>
+  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.0" date="2018-10-05T00:00:00.000+0200" id="A2" reliabilityScore="5" confirmationsurvey="//@botanicalsurveys.4">
+    <poi y="8" x="20"/>
+    <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.2/@species.0"/>
+  </botanicalsurveys>
+  <botanicalsurveys xsi:type="simuV1:ConfirmationSurvey" profile="//@profiles.2" date="2018-10-05T00:00:00.000+0200" id="C1" reliabilityScore="3" basicsurvey="//@botanicalsurveys.3">
+    <poi y="8" x="20"/>
     <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.0"/>
   </botanicalsurveys>
-  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.1" date="2018-10-05T00:00:00.000+0200" id="R3">
-    <poi y="650" x="615"/>
-    <target xsi:type="simuV1:Gender" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0"/>
+  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.1" date="2018-10-05T00:00:00.000+0200" id="B2" reliabilityScore="2">
+    <poi y="14" x="16"/>
+    <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.1/@species.0"/>
   </botanicalsurveys>
-  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.1" date="2018-10-05T00:00:00.000+0200" id="R4">
-    <poi y="490" x="760"/>
+  <botanicalsurveys xsi:type="simuV1:ConfirmationSurvey" profile="//@profiles.2" date="2018-10-05T00:00:00.000+0200" id="C2" reliabilityScore="4">
+    <poi y="14" x="16"/>
+    <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.2/@species.0"/>
+  </botanicalsurveys>
+  <botanicalsurveys xsi:type="simuV1:ConfirmationSurvey" profile="//@profiles.0" date="2018-10-05T00:00:00.000+0200" id="A3" reliabilityScore="1">
+    <poi y="14" x="16"/>
+    <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.0"/>
+  </botanicalsurveys>
+  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.2" date="2018-10-05T00:00:00.000+0200" id="C3" reliabilityScore="7">
+    <poi y="6" x="6"/>
     <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.1"/>
   </botanicalsurveys>
 </simuV1:Data>

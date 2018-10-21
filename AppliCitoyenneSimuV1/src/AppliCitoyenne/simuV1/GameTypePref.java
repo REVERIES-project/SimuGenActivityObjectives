@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see AppliCitoyenne.simuV1.SimuV1Package#getGameTypePref()
- * @model
+ * @model annotation="exeed classIcon='competitor'"
  * @generated
  */
 public interface GameTypePref extends EObject {

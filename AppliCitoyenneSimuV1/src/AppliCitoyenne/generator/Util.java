@@ -3,9 +3,6 @@ package AppliCitoyenne.generator;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-
 import AppliCitoyenne.simuV1.AdditionalSurvey;
 import AppliCitoyenne.simuV1.AppDesc;
 import AppliCitoyenne.simuV1.BotanicalSurvey;
@@ -15,12 +12,13 @@ import AppliCitoyenne.simuV1.Data;
 import AppliCitoyenne.simuV1.GameObjective;
 import AppliCitoyenne.simuV1.GameProfile;
 import AppliCitoyenne.simuV1.GameTypePref;
+import AppliCitoyenne.simuV1.Gender;
 import AppliCitoyenne.simuV1.InventoryObjective;
-import AppliCitoyenne.simuV1.InventoryPref;
-import AppliCitoyenne.simuV1.InventoryProfile;
 import AppliCitoyenne.simuV1.LearningObjective;
-import AppliCitoyenne.simuV1.NewSurvey;
+import AppliCitoyenne.simuV1.BasicSurvey;
 import AppliCitoyenne.simuV1.POI;
+import AppliCitoyenne.simuV1.Species;
+import AppliCitoyenne.simuV1.Target;
 import AppliCitoyenne.simuV1.ZoneCirculaire;
 
 public class Util {
@@ -28,18 +26,25 @@ public class Util {
 	private Data root;
 	private Context context;
 	private AppDesc appRoot;
-	private EList<InventoryObjective> reducedInventoryObjectiveList;
+	private List<InventoryObjective> reducedInventoryObjectiveList;
+	private List<LearningObjective> reducedLearningObjectiveList;
 
 	public Util(Data dataRoot, Context contextRoot, AppDesc appRoot) {
 		root = dataRoot;
 		context = contextRoot;
 		this.appRoot = appRoot;
 
-		reducedInventoryObjectiveList = new BasicEList<>();
+		reducedInventoryObjectiveList = new ArrayList<InventoryObjective>();
+		reducedLearningObjectiveList = new ArrayList<LearningObjective>();
 
 		for (Object o : appRoot.getObjective().getInventoryobjective()) {
 			InventoryObjective obj = (InventoryObjective) o;
 			reducedInventoryObjectiveList.add(obj);
+		}
+		
+		for (Object o : appRoot.getObjective().getLearningobjective()) {
+			LearningObjective obj = (LearningObjective) o;
+			reducedLearningObjectiveList.add(obj);
 		}
 	}
 
@@ -58,12 +63,12 @@ public class Util {
 		return res;
 	}
 
-	public List<NewSurvey> getNewSurveysInZone() {
-		List<NewSurvey> res = new ArrayList<NewSurvey>();
+	public List<BasicSurvey> getBasicSurveysInZone() {
+		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
 		List<BotanicalSurvey> list = getSurveysInZone();
 		for (BotanicalSurvey surv : list) {
-			if (surv instanceof NewSurvey) {
-				res.add((NewSurvey) surv);
+			if (surv instanceof BasicSurvey) {
+				res.add((BasicSurvey) surv);
 			}
 		}
 		return res;
@@ -98,30 +103,15 @@ public class Util {
 		return distEucl <= ((ZoneCirculaire) context.getZone()).getRayon();
 	}
 
-	public Object pickOneRandomizedElementFrom(EList list) {
+	public Object pickOneRandomizedElementFrom(List list) {
 		if (list.isEmpty())
 			return null;
 		int index = (int) (Math.random() * list.size());
 		return list.get(index);
 	}
 
-	public EList<InventoryObjective> weightedInventoryObjectives() {
-		EList<InventoryObjective> res = new BasicEList<>();
-
-		for (Object pref : context.getProfile().getInventoryprofile().getInventorypref()) {
-			InventoryPref cpref = (InventoryPref) pref;
-
-			if (!reducedInventoryObjectiveList.contains(cpref.getInventoryobjective()))
-				continue;
-			for (int i = 0; i < cpref.getPonderation(); i++)
-				res.add(cpref.getInventoryobjective());
-		}
-
-		return res;
-	}
-
-	public EList<GameObjective> weightedGameObjectives() {
-		EList<GameObjective> res = new BasicEList<>();
+	public List<GameObjective> weightedGameObjectives() {
+		List<GameObjective> res = new ArrayList<GameObjective>();
 		GameProfile profile = context.getProfile().getGameprofile();
 		for (Object pref : profile.getGametypepref()) {
 			GameTypePref cpref = (GameTypePref) pref;
@@ -133,29 +123,114 @@ public class Util {
 	}
 
 	public void analysis(Context contextRoot) {
-		if (getReliableFrom(getNewSurveysInZone()).size() == 0) {
-			//reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
+		// pas de relevés fiables ? => pas de relevés additionnels ET pas de 
+		List<BasicSurvey> basicReliableSurveys = getReliableFrom(getBasicSurveysInZone());  
+		if (basicReliableSurveys.size() == 0) {
 			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(2));
+			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(0));
+			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(1));
+		} else {
+			// verifier que l'on n'est ni à l'origine des relevés ni que l'on a deja fourni des données additionnelles
+			if (getBasicSurveysToCompleteForMe(basicReliableSurveys).size() == 0) {
+				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(2));
+				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(0));
+				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(1));
+			}
 		}
+		// pas de relevés non fiables ? => pas de relevés de confirmation/infirmation
+		if (getNonReliableFrom(getBasicSurveysInZone()).size() == 0) {
+			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
+		} else {
+			// verifier que l'on n'est ni à l'origine des relevés ni que l'on a deja fourni des données additionnelles
+			if (getBasicSurveysToConfirmForMe(basicReliableSurveys).size() == 0) {
+				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
+			}
+		}
+		
 	}
 
-	private List<NewSurvey> getReliableFrom(List<NewSurvey> newSurveysInZone) {
-		List<NewSurvey> res = new ArrayList<NewSurvey>();
-		for (NewSurvey surv: newSurveysInZone)
-			if (surv.getReliabilityScore() >= 6)
+	private List<BasicSurvey> getBasicSurveysToCompleteForMe(List<BasicSurvey> basicReliableSurveys) {
+		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		for (BasicSurvey surv: basicReliableSurveys) {
+			if (surv.getProfile().equals(context.getProfile()))
+				continue;
+			boolean found = false;
+			for (AdditionalSurvey addS: (List<AdditionalSurvey>)surv.getAdditionalsurvey()) {
+				if (addS.getProfile().equals(context.getProfile())) {
+					found = true;
+					break;
+				}
+			}
+			if (!found)
+				res.add(surv);
+		}
+		return res;
+	}
+
+	private List<BasicSurvey> getBasicSurveysToConfirmForMe(List<BasicSurvey> basicReliableSurveys) {
+		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		for (BasicSurvey surv: basicReliableSurveys) {
+			if (surv.getProfile().equals(context.getProfile()))
+				continue;
+			boolean found = false;
+			for (ConfirmationSurvey addS: (List<ConfirmationSurvey>)surv.getConfirmationsurvey()) {
+				if (!addS.getProfile().equals(context.getProfile())) {
+					found = true;
+					break;
+				}
+			}
+			if (!found)
+				res.add(surv);
+		}
+		return res;
+	}
+	
+	private List<BasicSurvey> getNonReliableFrom(List<BasicSurvey> basicSurveysInZone) {
+		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		for (BasicSurvey surv: basicSurveysInZone)
+			if (getCalculatedReliabilityScore(surv) < 6)
 				res.add(surv);
 		return res;
+	}
+
+	private List<BasicSurvey> getReliableFrom(List<BasicSurvey> basicSurveysInZone) {
+		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		for (BasicSurvey surv: basicSurveysInZone)
+			if (getCalculatedReliabilityScore(surv) >= 6)
+				res.add(surv);
+		return res;
+	}
+
+	private int getCalculatedReliabilityScore(BasicSurvey surv) {
+		int res = surv.getReliabilityScore();
+		for (ConfirmationSurvey cs: (List<ConfirmationSurvey>) surv.getConfirmationsurvey()) {
+			if (compliantTarget(cs.getTarget(), surv.getTarget())) {
+				res += cs.getReliabilityScore();
+			}
+		}
+		return res;
+	}
+
+	private boolean compliantTarget(Target firstTarget, Target confirmationTarget) {
+		if (firstTarget instanceof Species) {
+			if (confirmationTarget instanceof Species) {
+				return (((Species) firstTarget).getName().equals(((Species) confirmationTarget).getName()));
+			} else return false;
+		} else {
+			if (confirmationTarget instanceof Species) {
+				return (((Gender) firstTarget).getName().equals(((Gender)((Species) confirmationTarget).eContainer()).getName()));
+			} else return (((Gender) firstTarget).getName().equals(((Species) confirmationTarget).getName()));
+		}
 	}
 
 	public ObjectivesTriplet getTriplet() {
 		ObjectivesTriplet res = new ObjectivesTriplet();
 
-		InventoryObjective objCit = (InventoryObjective) pickOneRandomizedElementFrom(weightedInventoryObjectives());
+		InventoryObjective objCit = (InventoryObjective) pickOneRandomizedElementFrom(reducedInventoryObjectiveList);
 		// generatedActivity.setInventoryobjective(objCit);
 		res.setiObj(objCit);
 
-		LearningObjective objBot = (LearningObjective) pickOneRandomizedElementFrom(
-				appRoot.getObjective().getLearningobjective());
+		LearningObjective objBot = (LearningObjective) pickOneRandomizedElementFrom(reducedLearningObjectiveList);
 		// generatedActivity.setLearningobjective(objBot);
 		res.setlObj(objBot);
 

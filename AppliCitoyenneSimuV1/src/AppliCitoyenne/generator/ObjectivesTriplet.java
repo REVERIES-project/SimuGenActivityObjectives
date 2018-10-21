@@ -47,9 +47,9 @@ public class ObjectivesTriplet implements Comparable {
 	}
 
 	public boolean compliant(AppDesc root) {
-		if ((!gObj.equals(root.getObjective().getGameobjective().get(0))) && (!gObj.equals(root.getObjective().getGameobjective().get(1))))
-			if (lObj.equals(root.getObjective().getLearningobjective().get(5)))
-					return false;
+//		if ((!gObj.equals(root.getObjective().getGameobjective().get(0))) && (!gObj.equals(root.getObjective().getGameobjective().get(1))))
+//			if (lObj.equals(root.getObjective().getLearningobjective().get(5)))
+//					return false;
 		return true;
 	}
 	

@@ -371,31 +371,13 @@ public interface SimuV1Package extends EPackage {
 	int INVENTORY_PROFILE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Inventorypref</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_PROFILE__INVENTORYPREF = 0;
-
-	/**
-	 * The feature id for the '<em><b>Botanicalstat</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_PROFILE__BOTANICALSTAT = 1;
-
-	/**
 	 * The number of structural features of the '<em>Inventory Profile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_PROFILE_FEATURE_COUNT = 2;
+	int INVENTORY_PROFILE_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.BotanicalProfileImpl <em>Botanical Profile</em>}' class.
@@ -408,13 +390,31 @@ public interface SimuV1Package extends EPackage {
 	int BOTANICAL_PROFILE = 9;
 
 	/**
+	 * The feature id for the '<em><b>Botanicalstat</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOTANICAL_PROFILE__BOTANICALSTAT = 0;
+
+	/**
+	 * The feature id for the '<em><b>No Interest</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOTANICAL_PROFILE__NO_INTEREST = 1;
+
+	/**
 	 * The number of structural features of the '<em>Botanical Profile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOTANICAL_PROFILE_FEATURE_COUNT = 0;
+	int BOTANICAL_PROFILE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GameProfileImpl <em>Game Profile</em>}' class.
@@ -436,13 +436,22 @@ public interface SimuV1Package extends EPackage {
 	int GAME_PROFILE__GAMETYPEPREF = 0;
 
 	/**
+	 * The feature id for the '<em><b>No Interest</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_PROFILE__NO_INTEREST = 1;
+
+	/**
 	 * The number of structural features of the '<em>Game Profile</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_PROFILE_FEATURE_COUNT = 1;
+	int GAME_PROFILE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.BotanicalSurveyImpl <em>Botanical Survey</em>}' class.
@@ -1060,43 +1069,6 @@ public interface SimuV1Package extends EPackage {
 	int FAMILY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.InventoryPrefImpl <em>Inventory Pref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see AppliCitoyenne.simuV1.impl.InventoryPrefImpl
-	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getInventoryPref()
-	 * @generated
-	 */
-	int INVENTORY_PREF = 23;
-
-	/**
-	 * The feature id for the '<em><b>Inventoryobjective</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_PREF__INVENTORYOBJECTIVE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Ponderation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_PREF__PONDERATION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Inventory Pref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_PREF_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GameObjectiveImpl <em>Game Objective</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1104,7 +1076,7 @@ public interface SimuV1Package extends EPackage {
 	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameObjective()
 	 * @generated
 	 */
-	int GAME_OBJECTIVE = 24;
+	int GAME_OBJECTIVE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1132,7 +1104,7 @@ public interface SimuV1Package extends EPackage {
 	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getBotanicalStat()
 	 * @generated
 	 */
-	int BOTANICAL_STAT = 25;
+	int BOTANICAL_STAT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Direct Identification</b></em>' attribute.
@@ -1161,7 +1133,6 @@ public interface SimuV1Package extends EPackage {
 	 */
 	int BOTANICAL_STAT_FEATURE_COUNT = 2;
 
-
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GameTypePrefImpl <em>Game Type Pref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1170,7 +1141,7 @@ public interface SimuV1Package extends EPackage {
 	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameTypePref()
 	 * @generated
 	 */
-	int GAME_TYPE_PREF = 26;
+	int GAME_TYPE_PREF = 25;
 
 	/**
 	 * The feature id for the '<em><b>Ponderation</b></em>' attribute.
@@ -1478,28 +1449,6 @@ public interface SimuV1Package extends EPackage {
 	EClass getInventoryProfile();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.InventoryProfile#getInventorypref <em>Inventorypref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Inventorypref</em>'.
-	 * @see AppliCitoyenne.simuV1.InventoryProfile#getInventorypref()
-	 * @see #getInventoryProfile()
-	 * @generated
-	 */
-	EReference getInventoryProfile_Inventorypref();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.InventoryProfile#getBotanicalstat <em>Botanicalstat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Botanicalstat</em>'.
-	 * @see AppliCitoyenne.simuV1.InventoryProfile#getBotanicalstat()
-	 * @see #getInventoryProfile()
-	 * @generated
-	 */
-	EReference getInventoryProfile_Botanicalstat();
-
-	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.BotanicalProfile <em>Botanical Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1508,6 +1457,28 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EClass getBotanicalProfile();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.BotanicalProfile#getBotanicalstat <em>Botanicalstat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Botanicalstat</em>'.
+	 * @see AppliCitoyenne.simuV1.BotanicalProfile#getBotanicalstat()
+	 * @see #getBotanicalProfile()
+	 * @generated
+	 */
+	EReference getBotanicalProfile_Botanicalstat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.BotanicalProfile#isNoInterest <em>No Interest</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>No Interest</em>'.
+	 * @see AppliCitoyenne.simuV1.BotanicalProfile#isNoInterest()
+	 * @see #getBotanicalProfile()
+	 * @generated
+	 */
+	EAttribute getBotanicalProfile_NoInterest();
 
 	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.GameProfile <em>Game Profile</em>}'.
@@ -1529,6 +1500,17 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EReference getGameProfile_Gametypepref();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.GameProfile#isNoInterest <em>No Interest</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>No Interest</em>'.
+	 * @see AppliCitoyenne.simuV1.GameProfile#isNoInterest()
+	 * @see #getGameProfile()
+	 * @generated
+	 */
+	EAttribute getGameProfile_NoInterest();
 
 	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.BotanicalSurvey <em>Botanical Survey</em>}'.
@@ -1926,38 +1908,6 @@ public interface SimuV1Package extends EPackage {
 	EClass getTarget();
 
 	/**
-	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.InventoryPref <em>Inventory Pref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Inventory Pref</em>'.
-	 * @see AppliCitoyenne.simuV1.InventoryPref
-	 * @generated
-	 */
-	EClass getInventoryPref();
-
-	/**
-	 * Returns the meta object for the reference '{@link AppliCitoyenne.simuV1.InventoryPref#getInventoryobjective <em>Inventoryobjective</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Inventoryobjective</em>'.
-	 * @see AppliCitoyenne.simuV1.InventoryPref#getInventoryobjective()
-	 * @see #getInventoryPref()
-	 * @generated
-	 */
-	EReference getInventoryPref_Inventoryobjective();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.InventoryPref#getPonderation <em>Ponderation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ponderation</em>'.
-	 * @see AppliCitoyenne.simuV1.InventoryPref#getPonderation()
-	 * @see #getInventoryPref()
-	 * @generated
-	 */
-	EAttribute getInventoryPref_Ponderation();
-
-	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.GameObjective <em>Game Objective</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2291,22 +2241,6 @@ public interface SimuV1Package extends EPackage {
 		EClass INVENTORY_PROFILE = eINSTANCE.getInventoryProfile();
 
 		/**
-		 * The meta object literal for the '<em><b>Inventorypref</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVENTORY_PROFILE__INVENTORYPREF = eINSTANCE.getInventoryProfile_Inventorypref();
-
-		/**
-		 * The meta object literal for the '<em><b>Botanicalstat</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVENTORY_PROFILE__BOTANICALSTAT = eINSTANCE.getInventoryProfile_Botanicalstat();
-
-		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.BotanicalProfileImpl <em>Botanical Profile</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2315,6 +2249,22 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EClass BOTANICAL_PROFILE = eINSTANCE.getBotanicalProfile();
+
+		/**
+		 * The meta object literal for the '<em><b>Botanicalstat</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOTANICAL_PROFILE__BOTANICALSTAT = eINSTANCE.getBotanicalProfile_Botanicalstat();
+
+		/**
+		 * The meta object literal for the '<em><b>No Interest</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOTANICAL_PROFILE__NO_INTEREST = eINSTANCE.getBotanicalProfile_NoInterest();
 
 		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GameProfileImpl <em>Game Profile</em>}' class.
@@ -2333,6 +2283,14 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EReference GAME_PROFILE__GAMETYPEPREF = eINSTANCE.getGameProfile_Gametypepref();
+
+		/**
+		 * The meta object literal for the '<em><b>No Interest</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_PROFILE__NO_INTEREST = eINSTANCE.getGameProfile_NoInterest();
 
 		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.BotanicalSurveyImpl <em>Botanical Survey</em>}' class.
@@ -2653,32 +2611,6 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EClass TARGET = eINSTANCE.getTarget();
-
-		/**
-		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.InventoryPrefImpl <em>Inventory Pref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see AppliCitoyenne.simuV1.impl.InventoryPrefImpl
-		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getInventoryPref()
-		 * @generated
-		 */
-		EClass INVENTORY_PREF = eINSTANCE.getInventoryPref();
-
-		/**
-		 * The meta object literal for the '<em><b>Inventoryobjective</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INVENTORY_PREF__INVENTORYOBJECTIVE = eINSTANCE.getInventoryPref_Inventoryobjective();
-
-		/**
-		 * The meta object literal for the '<em><b>Ponderation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INVENTORY_PREF__PONDERATION = eINSTANCE.getInventoryPref_Ponderation();
 
 		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GameObjectiveImpl <em>Game Objective</em>}' class.

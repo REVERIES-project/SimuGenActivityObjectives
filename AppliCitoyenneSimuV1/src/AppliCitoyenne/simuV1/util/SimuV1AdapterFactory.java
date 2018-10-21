@@ -135,9 +135,6 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 			public Object caseTarget(Target object) {
 				return createTargetAdapter();
 			}
-			public Object caseInventoryPref(InventoryPref object) {
-				return createInventoryPrefAdapter();
-			}
 			public Object caseGameObjective(GameObjective object) {
 				return createGameObjectiveAdapter();
 			}
@@ -484,20 +481,6 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTargetAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.InventoryPref <em>Inventory Pref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see AppliCitoyenne.simuV1.InventoryPref
-	 * @generated
-	 */
-	public Adapter createInventoryPrefAdapter() {
 		return null;
 	}
 

@@ -18,7 +18,7 @@ import AppliCitoyenne.simuV1.*;
 
 public class Generator {
 
-	private static final int NB_GENERATIONS = 10000;
+	private static final int NB_GENERATIONS = 1000;
 
 	private ResourceSet resSet;
 
@@ -153,16 +153,6 @@ public class Generator {
 		generatedActivity.setLearningobjective(triplet.getlObj());
 		
 		return generatedActivity;
-
-		
-		/*
-		 * List<BotanicalSurvey> listSurveys = dataUtil.getSurveysInZone();
-		 * MyLogger.displayln("Existents surveys in the zone"); for (BotanicalSurvey
-		 * surv: listSurveys) { MyLogger.displayln("  - " + surv.getId());
-		 */
-		// (" + surv.getPoi().getX() +"/" + surv.getPoi().getY() + ") from " +
-		// surv.getProfile().getLastname());
-		// }
 	}
 
 	private void generateSeveralObjectiveScenario(int nb) {

@@ -19,7 +19,6 @@ import AppliCitoyenne.simuV1.GameProfile;
 import AppliCitoyenne.simuV1.GameTypePref;
 import AppliCitoyenne.simuV1.Gender;
 import AppliCitoyenne.simuV1.InventoryObjective;
-import AppliCitoyenne.simuV1.InventoryPref;
 import AppliCitoyenne.simuV1.InventoryProfile;
 import AppliCitoyenne.simuV1.LearningObjective;
 import AppliCitoyenne.simuV1.Objectives;
@@ -205,13 +204,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * @generated
 	 */
 	private EClass targetEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass inventoryPrefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -534,26 +526,26 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInventoryProfile_Inventorypref() {
-		return (EReference)inventoryProfileEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInventoryProfile_Botanicalstat() {
-		return (EReference)inventoryProfileEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBotanicalProfile() {
 		return botanicalProfileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBotanicalProfile_Botanicalstat() {
+		return (EReference)botanicalProfileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBotanicalProfile_NoInterest() {
+		return (EAttribute)botanicalProfileEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -572,6 +564,15 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 */
 	public EReference getGameProfile_Gametypepref() {
 		return (EReference)gameProfileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGameProfile_NoInterest() {
+		return (EAttribute)gameProfileEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -912,33 +913,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInventoryPref() {
-		return inventoryPrefEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInventoryPref_Inventoryobjective() {
-		return (EReference)inventoryPrefEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getInventoryPref_Ponderation() {
-		return (EAttribute)inventoryPrefEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getGameObjective() {
 		return gameObjectiveEClass;
 	}
@@ -1068,13 +1042,14 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(dataEClass, DATA__BOTANICALSURVEYS);
 
 		inventoryProfileEClass = createEClass(INVENTORY_PROFILE);
-		createEReference(inventoryProfileEClass, INVENTORY_PROFILE__INVENTORYPREF);
-		createEReference(inventoryProfileEClass, INVENTORY_PROFILE__BOTANICALSTAT);
 
 		botanicalProfileEClass = createEClass(BOTANICAL_PROFILE);
+		createEReference(botanicalProfileEClass, BOTANICAL_PROFILE__BOTANICALSTAT);
+		createEAttribute(botanicalProfileEClass, BOTANICAL_PROFILE__NO_INTEREST);
 
 		gameProfileEClass = createEClass(GAME_PROFILE);
 		createEReference(gameProfileEClass, GAME_PROFILE__GAMETYPEPREF);
+		createEAttribute(gameProfileEClass, GAME_PROFILE__NO_INTEREST);
 
 		botanicalSurveyEClass = createEClass(BOTANICAL_SURVEY);
 		createEReference(botanicalSurveyEClass, BOTANICAL_SURVEY__PROFILE);
@@ -1124,10 +1099,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(familyEClass, FAMILY__GENDER);
 
 		targetEClass = createEClass(TARGET);
-
-		inventoryPrefEClass = createEClass(INVENTORY_PREF);
-		createEReference(inventoryPrefEClass, INVENTORY_PREF__INVENTORYOBJECTIVE);
-		createEAttribute(inventoryPrefEClass, INVENTORY_PREF__PONDERATION);
 
 		gameObjectiveEClass = createEClass(GAME_OBJECTIVE);
 		createEAttribute(gameObjectiveEClass, GAME_OBJECTIVE__NAME);
@@ -1207,13 +1178,14 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getData_Botanicalsurveys(), this.getBotanicalSurvey(), null, "botanicalsurveys", null, 0, -1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inventoryProfileEClass, InventoryProfile.class, "InventoryProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInventoryProfile_Inventorypref(), this.getInventoryPref(), null, "inventorypref", null, 0, -1, InventoryProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInventoryProfile_Botanicalstat(), this.getBotanicalStat(), null, "botanicalstat", null, 0, -1, InventoryProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(botanicalProfileEClass, BotanicalProfile.class, "BotanicalProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBotanicalProfile_Botanicalstat(), this.getBotanicalStat(), null, "botanicalstat", null, 0, -1, BotanicalProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBotanicalProfile_NoInterest(), ecorePackage.getEBoolean(), "noInterest", null, 0, 1, BotanicalProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gameProfileEClass, GameProfile.class, "GameProfile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGameProfile_Gametypepref(), this.getGameTypePref(), null, "gametypepref", null, 0, -1, GameProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGameProfile_NoInterest(), ecorePackage.getEBoolean(), "noInterest", null, 0, 1, GameProfile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(botanicalSurveyEClass, BotanicalSurvey.class, "BotanicalSurvey", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBotanicalSurvey_Profile(), this.getProfile(), this.getProfile_Botanicalsurvey(), "profile", null, 0, 1, BotanicalSurvey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1263,10 +1235,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getFamily_Gender(), this.getGender(), null, "gender", null, 0, -1, Family.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(targetEClass, Target.class, "Target", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(inventoryPrefEClass, InventoryPref.class, "InventoryPref", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInventoryPref_Inventoryobjective(), this.getInventoryObjective(), null, "inventoryobjective", null, 0, 1, InventoryPref.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInventoryPref_Ponderation(), ecorePackage.getEInt(), "ponderation", null, 0, 1, InventoryPref.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gameObjectiveEClass, GameObjective.class, "GameObjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGameObjective_Name(), ecorePackage.getEString(), "name", null, 0, 1, GameObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1412,17 +1380,17 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 			 "classIcon", "class"
 		   });	
 		addAnnotation
-		  (inventoryPrefEClass, 
-		   source, 
-		   new String[] {
-			 "classIcon", "public"
-		   });	
-		addAnnotation
 		  (gameObjectiveEClass, 
 		   source, 
 		   new String[] {
 			 "classIcon", "competitor",
 			 "label", "return self.name;"
+		   });	
+		addAnnotation
+		  (gameTypePrefEClass, 
+		   source, 
+		   new String[] {
+			 "classIcon", "competitor"
 		   });
 	}
 

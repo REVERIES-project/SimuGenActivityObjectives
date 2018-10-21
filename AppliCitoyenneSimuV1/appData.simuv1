@@ -23,6 +23,12 @@
         <species name="Quercus robur"/>
         <species name="Quercus petraea"/>
       </gender>
+      <gender name="Castanea">
+        <species name="Castanea sativa"/>
+      </gender>
+      <gender name="Fagus">
+        <species name="Fagus sylvatica"/>
+      </gender>
     </family>
   </botanicalflore>
 </simuV1:AppDesc>
