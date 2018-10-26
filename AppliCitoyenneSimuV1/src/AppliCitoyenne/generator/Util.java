@@ -28,14 +28,16 @@ public class Util {
 	private AppDesc appRoot;
 	private List<InventoryObjective> reducedInventoryObjectiveList;
 	private List<LearningObjective> reducedLearningObjectiveList;
+	private List<GameObjective> reducedGameObjectiveList;
 
 	public Util(Data dataRoot, Context contextRoot, AppDesc appRoot) {
 		root = dataRoot;
 		context = contextRoot;
 		this.appRoot = appRoot;
 
-		reducedInventoryObjectiveList = new ArrayList<InventoryObjective>();
-		reducedLearningObjectiveList = new ArrayList<LearningObjective>();
+		reducedInventoryObjectiveList = new ArrayList<>();
+		reducedLearningObjectiveList = new ArrayList<>();
+		reducedGameObjectiveList = new ArrayList<>();
 
 		for (Object o : appRoot.getObjective().getInventoryobjective()) {
 			InventoryObjective obj = (InventoryObjective) o;
@@ -46,25 +48,28 @@ public class Util {
 			LearningObjective obj = (LearningObjective) o;
 			reducedLearningObjectiveList.add(obj);
 		}
+		
+		for (Object o : appRoot.getObjective().getGameobjective()) {
+			GameObjective obj = (GameObjective) o;
+			reducedGameObjectiveList.add(obj);
+		}
 	}
 
 	public List<BotanicalSurvey> getSurveysInZone() {
-		List<BotanicalSurvey> res = new ArrayList<BotanicalSurvey>();
+		List<BotanicalSurvey> res = new ArrayList<>();
 		List<BotanicalSurvey> list = root.getBotanicalsurveys();
 		for (BotanicalSurvey surv : list) {
 			if (isPOIinContext(surv.getPoi())) {
 				if (!surv.getProfile().equals(context.getProfile())) {
 					res.add(surv);
 				}
-
 			}
 		}
-
 		return res;
 	}
 
 	public List<BasicSurvey> getBasicSurveysInZone() {
-		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		List<BasicSurvey> res = new ArrayList<>();
 		List<BotanicalSurvey> list = getSurveysInZone();
 		for (BotanicalSurvey surv : list) {
 			if (surv instanceof BasicSurvey) {
@@ -75,7 +80,7 @@ public class Util {
 	}
 
 	public List<ConfirmationSurvey> getConfirmationSurveysInZone() {
-		List<ConfirmationSurvey> res = new ArrayList<ConfirmationSurvey>();
+		List<ConfirmationSurvey> res = new ArrayList<>();
 		List<BotanicalSurvey> list = getSurveysInZone();
 		for (BotanicalSurvey surv : list) {
 			if (surv instanceof ConfirmationSurvey) {
@@ -86,7 +91,7 @@ public class Util {
 	}
 
 	public List<AdditionalSurvey> getAdditionalSurveysInZone() {
-		List<AdditionalSurvey> res = new ArrayList<AdditionalSurvey>();
+		List<AdditionalSurvey> res = new ArrayList<>();
 		List<BotanicalSurvey> list = getSurveysInZone();
 		for (BotanicalSurvey surv : list) {
 			if (surv instanceof AdditionalSurvey) {
@@ -110,47 +115,64 @@ public class Util {
 		return list.get(index);
 	}
 
-	public List<GameObjective> weightedGameObjectives() {
-		List<GameObjective> res = new ArrayList<GameObjective>();
+	public List<GameObjective> weightedGameObjectives(boolean notConcerned) {
+		if (notConcerned) {
+			return reducedGameObjectiveList;
+		}
+		
+		List<GameObjective> res = new ArrayList<>();
 		GameProfile profile = context.getProfile().getGameprofile();
 		for (Object pref : profile.getGametypepref()) {
 			GameTypePref cpref = (GameTypePref) pref;
 			for (int i = 0; i < cpref.getPonderation(); i++)
 				res.add(cpref.getGameobjective());
 		}
-
 		return res;
 	}
 
 	public void analysis(Context contextRoot) {
-		// pas de relevés fiables ? => pas de relevés additionnels ET pas de 
+		
+		// pas de relevés fiables ? => pas de relevés additionnels
 		List<BasicSurvey> basicReliableSurveys = getReliableFrom(getBasicSurveysInZone());  
-		if (basicReliableSurveys.size() == 0) {
+		if (basicReliableSurveys.isEmpty()) {
 			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(2));
 			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(0));
 			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(1));
 		} else {
 			// verifier que l'on n'est ni à l'origine des relevés ni que l'on a deja fourni des données additionnelles
-			if (getBasicSurveysToCompleteForMe(basicReliableSurveys).size() == 0) {
+			if (getBasicSurveysToCompleteForMe(basicReliableSurveys).isEmpty()) {
 				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(2));
 				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(0));
 				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(1));
 			}
 		}
 		// pas de relevés non fiables ? => pas de relevés de confirmation/infirmation
-		if (getNonReliableFrom(getBasicSurveysInZone()).size() == 0) {
+		if (getNonReliableFrom(getBasicSurveysInZone()).isEmpty()) {
 			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
 		} else {
 			// verifier que l'on n'est ni à l'origine des relevés ni que l'on a deja fourni des données additionnelles
-			if (getBasicSurveysToConfirmForMe(basicReliableSurveys).size() == 0) {
+			if (getBasicSurveysToConfirmForMe(basicReliableSurveys).isEmpty()) {
 				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
 			}
 		}
 		
+		if (contextRoot.getProfile().getGameprofile().isNoInterest()) {
+			reducedGameObjectiveList.clear();
+			reducedGameObjectiveList.add((GameObjective)appRoot.getObjective().getGameobjective().get(6));
+		} else {
+			reducedGameObjectiveList.remove(appRoot.getObjective().getGameobjective().get(6));
+		}
+		
+		if (contextRoot.getProfile().getBotanicalprofile().isNoInterest()) {
+			reducedLearningObjectiveList.clear();
+			reducedLearningObjectiveList.add((LearningObjective)appRoot.getObjective().getLearningobjective().get(4));
+		} else {
+			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(4));
+		}
 	}
 
 	private List<BasicSurvey> getBasicSurveysToCompleteForMe(List<BasicSurvey> basicReliableSurveys) {
-		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		List<BasicSurvey> res = new ArrayList<>();
 		for (BasicSurvey surv: basicReliableSurveys) {
 			if (surv.getProfile().equals(context.getProfile()))
 				continue;
@@ -168,7 +190,7 @@ public class Util {
 	}
 
 	private List<BasicSurvey> getBasicSurveysToConfirmForMe(List<BasicSurvey> basicReliableSurveys) {
-		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		List<BasicSurvey> res = new ArrayList<>();
 		for (BasicSurvey surv: basicReliableSurveys) {
 			if (surv.getProfile().equals(context.getProfile()))
 				continue;
@@ -186,7 +208,7 @@ public class Util {
 	}
 	
 	private List<BasicSurvey> getNonReliableFrom(List<BasicSurvey> basicSurveysInZone) {
-		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		List<BasicSurvey> res = new ArrayList<>();
 		for (BasicSurvey surv: basicSurveysInZone)
 			if (getCalculatedReliabilityScore(surv) < 6)
 				res.add(surv);
@@ -194,7 +216,7 @@ public class Util {
 	}
 
 	private List<BasicSurvey> getReliableFrom(List<BasicSurvey> basicSurveysInZone) {
-		List<BasicSurvey> res = new ArrayList<BasicSurvey>();
+		List<BasicSurvey> res = new ArrayList<>();
 		for (BasicSurvey surv: basicSurveysInZone)
 			if (getCalculatedReliabilityScore(surv) >= 6)
 				res.add(surv);
@@ -227,15 +249,12 @@ public class Util {
 		ObjectivesTriplet res = new ObjectivesTriplet();
 
 		InventoryObjective objCit = (InventoryObjective) pickOneRandomizedElementFrom(reducedInventoryObjectiveList);
-		// generatedActivity.setInventoryobjective(objCit);
 		res.setiObj(objCit);
 
 		LearningObjective objBot = (LearningObjective) pickOneRandomizedElementFrom(reducedLearningObjectiveList);
-		// generatedActivity.setLearningobjective(objBot);
 		res.setlObj(objBot);
 
-		GameObjective objGame = (GameObjective) pickOneRandomizedElementFrom(weightedGameObjectives());
-		// generatedActivity.setGameobjective(objGame);
+		GameObjective objGame = (GameObjective) pickOneRandomizedElementFrom(weightedGameObjectives(context.getProfile().getGameprofile().isNoInterest()));
 		res.setgObj(objGame);
 
 		return res;

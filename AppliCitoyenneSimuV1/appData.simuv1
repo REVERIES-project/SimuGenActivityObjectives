@@ -3,10 +3,9 @@
   <objective>
     <learningobjective name="Identify a species"/>
     <learningobjective name="Identify whatever species of a specific gender"/>
-    <learningobjective name="Use the FOLIA tooling with a leave picture"/>
-    <learningobjective name="Use the FOLIA tooling with a bark picture"/>
+    <learningobjective name="Use the FOLIA tooling"/>
     <learningobjective name="Use the determination key"/>
-    <learningobjective name="Use the determination key with a specific criterion"/>
+    <learningobjective name="No learning elements"/>
     <inventoryobjective name="Make a survey"/>
     <inventoryobjective name="Confirm or infirm an existent survey"/>
     <inventoryobjective name="Add additional data to an existent survey"/>
@@ -16,6 +15,7 @@
     <gameobjective name="Play a competitive game"/>
     <gameobjective name="Play a collaborative or cooperative persistent game"/>
     <gameobjective name="Play a competitive persistent game"/>
+    <gameobjective name="No gamified elements"/>
   </objective>
   <botanicalflore>
     <family name="Fagaceae">

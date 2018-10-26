@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simuV1:Context xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simuV1="simuV1">
-  <zone xsi:type="simuV1:ZoneCirculaire" rayon="6" x="10" y="6"/>
-  <profile href="data.simuv1#//@profiles.0"/>
+  <zone xsi:type="simuV1:ZoneCirculaire" rayon="6" x="6" y="6"/>
+  <profile href="data.simuv1#//@profiles.2"/>
 </simuV1:Context>
