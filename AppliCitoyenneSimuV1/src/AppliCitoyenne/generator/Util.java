@@ -23,6 +23,26 @@ import AppliCitoyenne.simuV1.ZoneCirculaire;
 
 public class Util {
 
+	public static final int IDENTIFY_SPECIES = 0;
+	public static final int IDENTIFY_GENDER = 1;
+	public static final int USE_FOLIA = 2;
+	public static final int USE_KEYS = 3;
+	public static final int NO_LEARNING = 4;
+	
+	public static final int BASIC_SURVEY = 0;
+	public static final int CONFIRM_SURVEY = 1;
+	public static final int ADD_SURVEY = 2;
+	public static final int TREE_SURVEY = 3;
+	
+	public static final int SOLO_SIMPLE = 0;
+	public static final int SOLO_COMPOSED = 1;
+	public static final int COLLAB_SIMPLE = 2;
+	public static final int COMPET_SIMPLE = 3;
+	public static final int COLLAB_COMPOSED = 4;
+	public static final int COMPET_COMPOSED = 5;
+	public static final int NO_GAME = 6;
+	
+	
 	private Data root;
 	private Context context;
 	private AppDesc appRoot;
@@ -53,6 +73,8 @@ public class Util {
 			GameObjective obj = (GameObjective) o;
 			reducedGameObjectiveList.add(obj);
 		}
+		
+		
 	}
 
 	public List<BotanicalSurvey> getSurveysInZone() {
@@ -60,9 +82,9 @@ public class Util {
 		List<BotanicalSurvey> list = root.getBotanicalsurveys();
 		for (BotanicalSurvey surv : list) {
 			if (isPOIinContext(surv.getPoi())) {
-				if (!surv.getProfile().equals(context.getProfile())) {
+				//if (!surv.getProfile().equals(context.getProfile())) {
 					res.add(surv);
-				}
+				//}
 			}
 		}
 		return res;
@@ -71,9 +93,11 @@ public class Util {
 	public List<BasicSurvey> getBasicSurveysInZone() {
 		List<BasicSurvey> res = new ArrayList<>();
 		List<BotanicalSurvey> list = getSurveysInZone();
+		//System.out.println("Bsic Surveys in zone: ");
 		for (BotanicalSurvey surv : list) {
 			if (surv instanceof BasicSurvey) {
 				res.add((BasicSurvey) surv);
+				//System.out.print(surv.getId());
 			}
 		}
 		return res;
@@ -135,47 +159,47 @@ public class Util {
 		// pas de relevés fiables ? => pas de relevés additionnels
 		List<BasicSurvey> basicReliableSurveys = getReliableFrom(getBasicSurveysInZone());  
 		if (basicReliableSurveys.isEmpty()) {
-			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(2));
-			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(0));
-			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(1));
+			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(ADD_SURVEY));
+			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(IDENTIFY_SPECIES));
+			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(IDENTIFY_GENDER));
 		} else {
-			// verifier que l'on n'est ni à l'origine des relevés ni que l'on a deja fourni des données additionnelles
+			// verifier que l'on n'a deja fourni des données additionnelles
 			if (getBasicSurveysToCompleteForMe(basicReliableSurveys).isEmpty()) {
-				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(2));
-				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(0));
-				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(1));
+				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(ADD_SURVEY));
+				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(IDENTIFY_GENDER));
+				reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(IDENTIFY_SPECIES));
 			}
 		}
 		// pas de relevés non fiables ? => pas de relevés de confirmation/infirmation
 		if (getNonReliableFrom(getBasicSurveysInZone()).isEmpty()) {
-			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
+			reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(CONFIRM_SURVEY));
 		} else {
 			// verifier que l'on n'est ni à l'origine des relevés ni que l'on a deja fourni des données additionnelles
 			if (getBasicSurveysToConfirmForMe(basicReliableSurveys).isEmpty()) {
-				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(1));
+				reducedInventoryObjectiveList.remove(appRoot.getObjective().getInventoryobjective().get(ADD_SURVEY));
 			}
 		}
 		
 		if (contextRoot.getProfile().getGameprofile().isNoInterest()) {
 			reducedGameObjectiveList.clear();
-			reducedGameObjectiveList.add((GameObjective)appRoot.getObjective().getGameobjective().get(6));
+			reducedGameObjectiveList.add((GameObjective)appRoot.getObjective().getGameobjective().get(NO_GAME));
 		} else {
-			reducedGameObjectiveList.remove(appRoot.getObjective().getGameobjective().get(6));
+			reducedGameObjectiveList.remove(appRoot.getObjective().getGameobjective().get(NO_GAME));
 		}
 		
 		if (contextRoot.getProfile().getBotanicalprofile().isNoInterest()) {
 			reducedLearningObjectiveList.clear();
-			reducedLearningObjectiveList.add((LearningObjective)appRoot.getObjective().getLearningobjective().get(4));
-		} else {
-			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(4));
-		}
+			reducedLearningObjectiveList.add((LearningObjective)appRoot.getObjective().getLearningobjective().get(NO_LEARNING));
+		} /*else {
+			reducedLearningObjectiveList.remove(appRoot.getObjective().getLearningobjective().get(NO_LEARNING));
+		}*/
 	}
 
 	private List<BasicSurvey> getBasicSurveysToCompleteForMe(List<BasicSurvey> basicReliableSurveys) {
 		List<BasicSurvey> res = new ArrayList<>();
 		for (BasicSurvey surv: basicReliableSurveys) {
-			if (surv.getProfile().equals(context.getProfile()))
-				continue;
+			/*if (surv.getProfile().equals(context.getProfile()))
+				continue;*/
 			boolean found = false;
 			for (AdditionalSurvey addS: (List<AdditionalSurvey>)surv.getAdditionalsurvey()) {
 				if (addS.getProfile().equals(context.getProfile())) {

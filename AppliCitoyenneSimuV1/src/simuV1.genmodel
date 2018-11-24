@@ -14,12 +14,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/objective"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/botanicalflore"/>
     </genClasses>
-    <genClasses ecoreClass="simuV1.ecore#//InventoryObjective">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//InventoryObjective/name"/>
-    </genClasses>
-    <genClasses ecoreClass="simuV1.ecore#//LearningObjective">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//LearningObjective/name"/>
-    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//InventoryObjective"/>
+    <genClasses ecoreClass="simuV1.ecore#//LearningObjective"/>
     <genClasses image="false" ecoreClass="simuV1.ecore#//Zone"/>
     <genClasses ecoreClass="simuV1.ecore#//ZoneCirculaire">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//ZoneCirculaire/rayon"/>
@@ -95,9 +91,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Family/gender"/>
     </genClasses>
     <genClasses image="false" ecoreClass="simuV1.ecore#//Target"/>
-    <genClasses ecoreClass="simuV1.ecore#//GameObjective">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameObjective/name"/>
-    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//GameObjective"/>
     <genClasses ecoreClass="simuV1.ecore#//BotanicalStat">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//BotanicalStat/directIdentification"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalStat/target"/>
@@ -105,6 +99,10 @@
     <genClasses ecoreClass="simuV1.ecore#//GameTypePref">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameTypePref/ponderation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameTypePref/gameobjective"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//Objective">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objective/incompatibleObjectives"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Objective/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

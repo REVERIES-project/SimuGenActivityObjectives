@@ -130,6 +130,43 @@ public interface SimuV1Package extends EPackage {
 	int APP_DESC_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.ObjectiveImpl <em>Objective</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.ObjectiveImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getObjective()
+	 * @generated
+	 */
+	int OBJECTIVE = 26;
+
+	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECTIVE__INCOMPATIBLE_OBJECTIVES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECTIVE__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Objective</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECTIVE_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.InventoryObjectiveImpl <em>Inventory Objective</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,13 +177,22 @@ public interface SimuV1Package extends EPackage {
 	int INVENTORY_OBJECTIVE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_OBJECTIVE__NAME = 0;
+	int INVENTORY_OBJECTIVE__NAME = OBJECTIVE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Inventory Objective</em>' class.
@@ -155,7 +201,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INVENTORY_OBJECTIVE_FEATURE_COUNT = 1;
+	int INVENTORY_OBJECTIVE_FEATURE_COUNT = OBJECTIVE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.LearningObjectiveImpl <em>Learning Objective</em>}' class.
@@ -168,13 +214,22 @@ public interface SimuV1Package extends EPackage {
 	int LEARNING_OBJECTIVE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEARNING_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEARNING_OBJECTIVE__NAME = 0;
+	int LEARNING_OBJECTIVE__NAME = OBJECTIVE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Learning Objective</em>' class.
@@ -183,7 +238,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEARNING_OBJECTIVE_FEATURE_COUNT = 1;
+	int LEARNING_OBJECTIVE_FEATURE_COUNT = OBJECTIVE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.ZoneImpl <em>Zone</em>}' class.
@@ -1079,13 +1134,22 @@ public interface SimuV1Package extends EPackage {
 	int GAME_OBJECTIVE = 23;
 
 	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_OBJECTIVE__NAME = 0;
+	int GAME_OBJECTIVE__NAME = OBJECTIVE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Game Objective</em>' class.
@@ -1094,7 +1158,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GAME_OBJECTIVE_FEATURE_COUNT = 1;
+	int GAME_OBJECTIVE_FEATURE_COUNT = OBJECTIVE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.BotanicalStatImpl <em>Botanical Stat</em>}' class.
@@ -1246,17 +1310,6 @@ public interface SimuV1Package extends EPackage {
 	EClass getInventoryObjective();
 
 	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.InventoryObjective#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see AppliCitoyenne.simuV1.InventoryObjective#getName()
-	 * @see #getInventoryObjective()
-	 * @generated
-	 */
-	EAttribute getInventoryObjective_Name();
-
-	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.LearningObjective <em>Learning Objective</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1265,17 +1318,6 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EClass getLearningObjective();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.LearningObjective#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see AppliCitoyenne.simuV1.LearningObjective#getName()
-	 * @see #getLearningObjective()
-	 * @generated
-	 */
-	EAttribute getLearningObjective_Name();
 
 	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Zone <em>Zone</em>}'.
@@ -1918,17 +1960,6 @@ public interface SimuV1Package extends EPackage {
 	EClass getGameObjective();
 
 	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.GameObjective#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see AppliCitoyenne.simuV1.GameObjective#getName()
-	 * @see #getGameObjective()
-	 * @generated
-	 */
-	EAttribute getGameObjective_Name();
-
-	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.BotanicalStat <em>Botanical Stat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1991,6 +2022,38 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EReference getGameTypePref_Gameobjective();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Objective <em>Objective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Objective</em>'.
+	 * @see AppliCitoyenne.simuV1.Objective
+	 * @generated
+	 */
+	EClass getObjective();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.Objective#getIncompatibleObjectives <em>Incompatible Objectives</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Incompatible Objectives</em>'.
+	 * @see AppliCitoyenne.simuV1.Objective#getIncompatibleObjectives()
+	 * @see #getObjective()
+	 * @generated
+	 */
+	EReference getObjective_IncompatibleObjectives();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Objective#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see AppliCitoyenne.simuV1.Objective#getName()
+	 * @see #getObjective()
+	 * @generated
+	 */
+	EAttribute getObjective_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2077,14 +2140,6 @@ public interface SimuV1Package extends EPackage {
 		EClass INVENTORY_OBJECTIVE = eINSTANCE.getInventoryObjective();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INVENTORY_OBJECTIVE__NAME = eINSTANCE.getInventoryObjective_Name();
-
-		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.LearningObjectiveImpl <em>Learning Objective</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2093,14 +2148,6 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EClass LEARNING_OBJECTIVE = eINSTANCE.getLearningObjective();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LEARNING_OBJECTIVE__NAME = eINSTANCE.getLearningObjective_Name();
 
 		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.ZoneImpl <em>Zone</em>}' class.
@@ -2623,14 +2670,6 @@ public interface SimuV1Package extends EPackage {
 		EClass GAME_OBJECTIVE = eINSTANCE.getGameObjective();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GAME_OBJECTIVE__NAME = eINSTANCE.getGameObjective_Name();
-
-		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.BotanicalStatImpl <em>Botanical Stat</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2681,6 +2720,32 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EReference GAME_TYPE_PREF__GAMEOBJECTIVE = eINSTANCE.getGameTypePref_Gameobjective();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.ObjectiveImpl <em>Objective</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.ObjectiveImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getObjective()
+		 * @generated
+		 */
+		EClass OBJECTIVE = eINSTANCE.getObjective();
+
+		/**
+		 * The meta object literal for the '<em><b>Incompatible Objectives</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJECTIVE__INCOMPATIBLE_OBJECTIVES = eINSTANCE.getObjective_IncompatibleObjectives();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECTIVE__NAME = eINSTANCE.getObjective_Name();
 
 	}
 

@@ -21,6 +21,7 @@ import AppliCitoyenne.simuV1.Gender;
 import AppliCitoyenne.simuV1.InventoryObjective;
 import AppliCitoyenne.simuV1.InventoryProfile;
 import AppliCitoyenne.simuV1.LearningObjective;
+import AppliCitoyenne.simuV1.Objective;
 import AppliCitoyenne.simuV1.Objectives;
 import AppliCitoyenne.simuV1.Profile;
 import AppliCitoyenne.simuV1.SimuV1Factory;
@@ -227,6 +228,13 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	private EClass gameTypePrefEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass objectiveEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -355,26 +363,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInventoryObjective_Name() {
-		return (EAttribute)inventoryObjectiveEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLearningObjective() {
 		return learningObjectiveEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLearningObjective_Name() {
-		return (EAttribute)learningObjectiveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -922,15 +912,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGameObjective_Name() {
-		return (EAttribute)gameObjectiveEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBotanicalStat() {
 		return botanicalStatEClass;
 	}
@@ -985,6 +966,33 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getObjective() {
+		return objectiveEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getObjective_IncompatibleObjectives() {
+		return (EReference)objectiveEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getObjective_Name() {
+		return (EAttribute)objectiveEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimuV1Factory getSimuV1Factory() {
 		return (SimuV1Factory)getEFactoryInstance();
 	}
@@ -1017,10 +1025,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(appDescEClass, APP_DESC__BOTANICALFLORE);
 
 		inventoryObjectiveEClass = createEClass(INVENTORY_OBJECTIVE);
-		createEAttribute(inventoryObjectiveEClass, INVENTORY_OBJECTIVE__NAME);
 
 		learningObjectiveEClass = createEClass(LEARNING_OBJECTIVE);
-		createEAttribute(learningObjectiveEClass, LEARNING_OBJECTIVE__NAME);
 
 		zoneEClass = createEClass(ZONE);
 
@@ -1101,7 +1107,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		targetEClass = createEClass(TARGET);
 
 		gameObjectiveEClass = createEClass(GAME_OBJECTIVE);
-		createEAttribute(gameObjectiveEClass, GAME_OBJECTIVE__NAME);
 
 		botanicalStatEClass = createEClass(BOTANICAL_STAT);
 		createEAttribute(botanicalStatEClass, BOTANICAL_STAT__DIRECT_IDENTIFICATION);
@@ -1110,6 +1115,10 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		gameTypePrefEClass = createEClass(GAME_TYPE_PREF);
 		createEAttribute(gameTypePrefEClass, GAME_TYPE_PREF__PONDERATION);
 		createEReference(gameTypePrefEClass, GAME_TYPE_PREF__GAMEOBJECTIVE);
+
+		objectiveEClass = createEClass(OBJECTIVE);
+		createEReference(objectiveEClass, OBJECTIVE__INCOMPATIBLE_OBJECTIVES);
+		createEAttribute(objectiveEClass, OBJECTIVE__NAME);
 	}
 
 	/**
@@ -1136,12 +1145,15 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		setNsURI(eNS_URI);
 
 		// Add supertypes to classes
+		inventoryObjectiveEClass.getESuperTypes().add(this.getObjective());
+		learningObjectiveEClass.getESuperTypes().add(this.getObjective());
 		zoneCirculaireEClass.getESuperTypes().add(this.getZone());
 		basicSurveyEClass.getESuperTypes().add(this.getBotanicalSurvey());
 		confirmationSurveyEClass.getESuperTypes().add(this.getBotanicalSurvey());
 		additionalSurveyEClass.getESuperTypes().add(this.getBotanicalSurvey());
 		speciesEClass.getESuperTypes().add(this.getTarget());
 		genderEClass.getESuperTypes().add(this.getTarget());
+		gameObjectiveEClass.getESuperTypes().add(this.getObjective());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1153,10 +1165,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getAppDesc_Botanicalflore(), this.getBotanicalFlore(), null, "botanicalflore", null, 0, 1, AppDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inventoryObjectiveEClass, InventoryObjective.class, "InventoryObjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInventoryObjective_Name(), ecorePackage.getEString(), "name", null, 0, 1, InventoryObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(learningObjectiveEClass, LearningObjective.class, "LearningObjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLearningObjective_Name(), ecorePackage.getEString(), "name", null, 0, 1, LearningObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(zoneEClass, Zone.class, "Zone", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1237,7 +1247,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEClass(targetEClass, Target.class, "Target", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(gameObjectiveEClass, GameObjective.class, "GameObjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGameObjective_Name(), ecorePackage.getEString(), "name", null, 0, 1, GameObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(botanicalStatEClass, BotanicalStat.class, "BotanicalStat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBotanicalStat_DirectIdentification(), ecorePackage.getEInt(), "directIdentification", null, 0, 1, BotanicalStat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1246,6 +1255,10 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEClass(gameTypePrefEClass, GameTypePref.class, "GameTypePref", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGameTypePref_Ponderation(), ecorePackage.getEInt(), "ponderation", null, 0, 1, GameTypePref.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGameTypePref_Gameobjective(), this.getGameObjective(), null, "gameobjective", null, 0, 1, GameTypePref.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(objectiveEClass, Objective.class, "Objective", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getObjective_IncompatibleObjectives(), this.getObjective(), null, "incompatibleObjectives", null, 0, -1, Objective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjective_Name(), ecorePackage.getEString(), "name", null, 0, 1, Objective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

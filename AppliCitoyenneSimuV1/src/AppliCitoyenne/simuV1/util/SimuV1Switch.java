@@ -98,12 +98,14 @@ public class SimuV1Switch {
 			case SimuV1Package.INVENTORY_OBJECTIVE: {
 				InventoryObjective inventoryObjective = (InventoryObjective)theEObject;
 				Object result = caseInventoryObjective(inventoryObjective);
+				if (result == null) result = caseObjective(inventoryObjective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.LEARNING_OBJECTIVE: {
 				LearningObjective learningObjective = (LearningObjective)theEObject;
 				Object result = caseLearningObjective(learningObjective);
+				if (result == null) result = caseObjective(learningObjective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,6 +232,7 @@ public class SimuV1Switch {
 			case SimuV1Package.GAME_OBJECTIVE: {
 				GameObjective gameObjective = (GameObjective)theEObject;
 				Object result = caseGameObjective(gameObjective);
+				if (result == null) result = caseObjective(gameObjective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +245,12 @@ public class SimuV1Switch {
 			case SimuV1Package.GAME_TYPE_PREF: {
 				GameTypePref gameTypePref = (GameTypePref)theEObject;
 				Object result = caseGameTypePref(gameTypePref);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.OBJECTIVE: {
+				Objective objective = (Objective)theEObject;
+				Object result = caseObjective(objective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -636,6 +645,21 @@ public class SimuV1Switch {
 	 * @generated
 	 */
 	public Object caseGameTypePref(GameTypePref object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Objective</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Objective</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseObjective(Objective object) {
 		return null;
 	}
 

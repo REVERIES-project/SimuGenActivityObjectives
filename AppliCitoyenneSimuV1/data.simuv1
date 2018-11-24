@@ -4,13 +4,13 @@
     <inventoryprofile/>
     <botanicalprofile/>
     <gameprofile>
-      <gametypepref ponderation="5">
+      <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.2"/>
       </gametypepref>
-      <gametypepref ponderation="5">
+      <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.4"/>
       </gametypepref>
-      <gametypepref ponderation="2">
+      <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.3"/>
       </gametypepref>
       <gametypepref>
@@ -53,7 +53,7 @@
     <botanicalprofile noInterest="true"/>
     <gameprofile noInterest="true"/>
   </profiles>
-  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.0" date="2018-10-05T00:00:00.000+0200" id="A1" reliabilityScore="2" confirmationsurvey="//@botanicalsurveys.1" additionalsurvey="//@botanicalsurveys.2">
+  <botanicalsurveys xsi:type="simuV1:BasicSurvey" profile="//@profiles.0" date="2018-10-05T00:00:00.000+0200" id="A1" reliabilityScore="3" confirmationsurvey="//@botanicalsurveys.1" additionalsurvey="//@botanicalsurveys.2">
     <poi y="9" x="13"/>
     <target xsi:type="simuV1:Species" href="appData.simuv1#//@botanicalflore/@family.0/@gender.0/@species.1"/>
   </botanicalsurveys>

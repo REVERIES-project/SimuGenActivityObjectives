@@ -47,9 +47,21 @@ public class ObjectivesTriplet implements Comparable {
 	}
 
 	public boolean compliant(AppDesc root) {
-//		if ((!gObj.equals(root.getObjective().getGameobjective().get(0))) && (!gObj.equals(root.getObjective().getGameobjective().get(1))))
-//			if (lObj.equals(root.getObjective().getLearningobjective().get(5)))
-//					return false;
+		
+		if (getgObj().getIncompatibleObjectives().contains(iObj) || getgObj().getIncompatibleObjectives().contains(lObj)) {
+			return false;
+		}
+			
+		if (getlObj().getIncompatibleObjectives().contains(iObj) || getgObj().getIncompatibleObjectives().contains(gObj)) {
+			return false;
+		}
+		if (getiObj().getIncompatibleObjectives().contains(gObj) || getgObj().getIncompatibleObjectives().contains(lObj)) {
+			return false;
+		}
+		
+		//if ((!gObj.equals(root.getObjective().getGameobjective().get(0))) && (!gObj.equals(root.getObjective().getGameobjective().get(1))))
+		//	if (lObj.equals(root.getObjective().getLearningobjective().get(5)))
+		//			return false;
 		return true;
 	}
 	

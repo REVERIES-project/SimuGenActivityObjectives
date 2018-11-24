@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simuV1:AppDesc xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simuV1="simuV1">
   <objective>
-    <learningobjective name="Identify a species"/>
-    <learningobjective name="Identify whatever species of a specific gender"/>
-    <learningobjective name="Use the FOLIA tooling"/>
-    <learningobjective name="Use the determination key"/>
+    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Identify a species"/>
+    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Identify whatever species of a specific gender"/>
+    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Use the FOLIA tooling"/>
+    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Use the determination key"/>
     <learningobjective name="No learning elements"/>
     <inventoryobjective name="Make a survey"/>
     <inventoryobjective name="Confirm or infirm an existent survey"/>
     <inventoryobjective name="Add additional data to an existent survey"/>
-    <gameobjective name="Play a solo game"/>
-    <gameobjective name="Play a persistent solo game"/>
+    <inventoryobjective incompatibleObjectives="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.3 //@objective/@learningobjective.2" name="Identify a tree"/>
+    <gameobjective name="Play a simple solo game"/>
+    <gameobjective name="Play a composed solo game"/>
     <gameobjective name="Play a collaborative or cooperative game"/>
     <gameobjective name="Play a competitive game"/>
-    <gameobjective name="Play a collaborative or cooperative persistent game"/>
-    <gameobjective name="Play a competitive persistent game"/>
+    <gameobjective name="Play a collaborative or cooperative composed game"/>
+    <gameobjective name="Play a competitive composed game"/>
     <gameobjective name="No gamified elements"/>
   </objective>
   <botanicalflore>

@@ -17,19 +17,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="botanicalflore" eType="#//BotanicalFlore"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InventoryObjective">
+  <eClassifiers xsi:type="ecore:EClass" name="InventoryObjective" eSuperTypes="#//Objective">
     <eAnnotations source="exeed">
       <details key="classIcon" value="public"/>
       <details key="label" value="return self.name;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LearningObjective">
+  <eClassifiers xsi:type="ecore:EClass" name="LearningObjective" eSuperTypes="#//Objective">
     <eAnnotations source="exeed">
       <details key="classIcon" value="resource"/>
       <details key="label" value="return self.name;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Zone" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ZoneCirculaire" eSuperTypes="#//Zone">
@@ -171,12 +169,11 @@
         eType="#//Gender" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GameObjective">
+  <eClassifiers xsi:type="ecore:EClass" name="GameObjective" eSuperTypes="#//Objective">
     <eAnnotations source="exeed">
       <details key="classIcon" value="competitor"/>
       <details key="label" value="return self.name;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BotanicalStat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="directIdentification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -188,5 +185,10 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ponderation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gameobjective" eType="#//GameObjective"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Objective" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incompatibleObjectives"
+        upperBound="-1" eType="#//Objective"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

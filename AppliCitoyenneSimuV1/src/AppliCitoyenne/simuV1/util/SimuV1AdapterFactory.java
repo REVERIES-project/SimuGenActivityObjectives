@@ -144,6 +144,9 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 			public Object caseGameTypePref(GameTypePref object) {
 				return createGameTypePrefAdapter();
 			}
+			public Object caseObjective(Objective object) {
+				return createObjectiveAdapter();
+			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -523,6 +526,20 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGameTypePrefAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.Objective <em>Objective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.Objective
+	 * @generated
+	 */
+	public Adapter createObjectiveAdapter() {
 		return null;
 	}
 
