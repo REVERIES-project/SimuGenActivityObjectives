@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link AppliCitoyenne.simuV1.Objective#getIncompatibleObjectives <em>Incompatible Objectives</em>}</li>
  *   <li>{@link AppliCitoyenne.simuV1.Objective#getName <em>Name</em>}</li>
+ *   <li>{@link AppliCitoyenne.simuV1.Objective#getIncompatibleObjectives <em>Incompatible Objectives</em>}</li>
  * </ul>
  *
  * @see AppliCitoyenne.simuV1.SimuV1Package#getObjective()
@@ -24,22 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Objective extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Incompatible Objectives</b></em>' reference list.
-	 * The list contents are of type {@link AppliCitoyenne.simuV1.Objective}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Incompatible Objectives</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incompatible Objectives</em>' reference list.
-	 * @see AppliCitoyenne.simuV1.SimuV1Package#getObjective_IncompatibleObjectives()
-	 * @model type="AppliCitoyenne.simuV1.Objective"
-	 * @generated
-	 */
-	EList getIncompatibleObjectives();
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,5 +49,21 @@ public interface Objective extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * The list contents are of type {@link AppliCitoyenne.simuV1.Objective}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incompatible Objectives</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incompatible Objectives</em>' reference list.
+	 * @see AppliCitoyenne.simuV1.SimuV1Package#getObjective_IncompatibleObjectives()
+	 * @model
+	 * @generated
+	 */
+	EList<Objective> getIncompatibleObjectives();
 
 } // Objective

@@ -2,7 +2,9 @@
 <simuV1:Data xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simuV1="simuV1">
   <profiles firstname="A" lastname="A" botanicalsurvey="//@botanicalsurveys.0 //@botanicalsurveys.3 //@botanicalsurveys.7">
     <inventoryprofile/>
-    <botanicalprofile/>
+    <botanicalprofile>
+      <botanicalstat/>
+    </botanicalprofile>
     <gameprofile>
       <gametypepref>
         <gameobjective href="appData.simuv1#//@objective/@gameobjective.2"/>

@@ -42,7 +42,7 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList family;
+	protected EList<Family> family;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,6 +58,7 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.BOTANICAL_FLORE;
 	}
@@ -67,9 +68,9 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getFamily() {
+	public EList<Family> getFamily() {
 		if (family == null) {
-			family = new EObjectContainmentEList(Family.class, this, SimuV1Package.BOTANICAL_FLORE__FAMILY);
+			family = new EObjectContainmentEList<Family>(Family.class, this, SimuV1Package.BOTANICAL_FLORE__FAMILY);
 		}
 		return family;
 	}
@@ -79,10 +80,11 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_FLORE__FAMILY:
-				return ((InternalEList)getFamily()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getFamily()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,6 +94,7 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_FLORE__FAMILY:
@@ -105,11 +108,13 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_FLORE__FAMILY:
 				getFamily().clear();
-				getFamily().addAll((Collection)newValue);
+				getFamily().addAll((Collection<? extends Family>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -120,6 +125,7 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_FLORE__FAMILY:
@@ -134,6 +140,7 @@ public class BotanicalFloreImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_FLORE__FAMILY:

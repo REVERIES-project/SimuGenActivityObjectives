@@ -101,6 +101,7 @@ public class ZoneCirculaireImpl extends ZoneImpl implements ZoneCirculaire {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.ZONE_CIRCULAIRE;
 	}
@@ -173,14 +174,15 @@ public class ZoneCirculaireImpl extends ZoneImpl implements ZoneCirculaire {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.ZONE_CIRCULAIRE__RAYON:
-				return new Integer(getRayon());
+				return getRayon();
 			case SimuV1Package.ZONE_CIRCULAIRE__X:
-				return new Integer(getX());
+				return getX();
 			case SimuV1Package.ZONE_CIRCULAIRE__Y:
-				return new Integer(getY());
+				return getY();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,16 +192,17 @@ public class ZoneCirculaireImpl extends ZoneImpl implements ZoneCirculaire {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.ZONE_CIRCULAIRE__RAYON:
-				setRayon(((Integer)newValue).intValue());
+				setRayon((Integer)newValue);
 				return;
 			case SimuV1Package.ZONE_CIRCULAIRE__X:
-				setX(((Integer)newValue).intValue());
+				setX((Integer)newValue);
 				return;
 			case SimuV1Package.ZONE_CIRCULAIRE__Y:
-				setY(((Integer)newValue).intValue());
+				setY((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,6 +213,7 @@ public class ZoneCirculaireImpl extends ZoneImpl implements ZoneCirculaire {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.ZONE_CIRCULAIRE__RAYON:
@@ -230,6 +234,7 @@ public class ZoneCirculaireImpl extends ZoneImpl implements ZoneCirculaire {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.ZONE_CIRCULAIRE__RAYON:
@@ -247,6 +252,7 @@ public class ZoneCirculaireImpl extends ZoneImpl implements ZoneCirculaire {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

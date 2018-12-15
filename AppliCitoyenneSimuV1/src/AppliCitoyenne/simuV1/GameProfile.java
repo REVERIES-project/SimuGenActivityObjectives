@@ -35,10 +35,10 @@ public interface GameProfile extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gametypepref</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getGameProfile_Gametypepref()
-	 * @model type="AppliCitoyenne.simuV1.GameTypePref" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getGametypepref();
+	EList<GameTypePref> getGametypepref();
 
 	/**
 	 * Returns the value of the '<em><b>No Interest</b></em>' attribute.

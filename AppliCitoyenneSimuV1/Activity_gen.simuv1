@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <simuV1:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simuV1="simuV1">
   <inventoryobjective href="appData.simuv1#//@objective/@inventoryobjective.0"/>
-  <learningobjective href="appData.simuv1#//@objective/@learningobjective.3"/>
+  <learningobjective href="appData.simuv1#//@objective/@learningobjective.0"/>
   <profile href="data.simuv1#//@profiles.0"/>
   <gameobjective href="appData.simuv1#//@objective/@gameobjective.0"/>
+  <gametype href="appData.simuv1#//@gametypes/@gametype.1"/>
 </simuV1:Activity>

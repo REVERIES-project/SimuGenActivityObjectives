@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simuV1:AppDesc xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simuV1="simuV1">
   <objective>
-    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Identify a species"/>
-    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Identify whatever species of a specific gender"/>
-    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Use the FOLIA tooling"/>
-    <learningobjective incompatibleObjectives="//@objective/@inventoryobjective.3" name="Use the determination key"/>
+    <learningobjective name="Identify a species" incompatibleObjectives="//@objective/@inventoryobjective.3"/>
+    <learningobjective name="Identify whatever species of a specific gender" incompatibleObjectives="//@objective/@inventoryobjective.3"/>
+    <learningobjective name="Use the FOLIA tooling" incompatibleObjectives="//@objective/@inventoryobjective.3"/>
+    <learningobjective name="Use the determination key" incompatibleObjectives="//@objective/@inventoryobjective.3"/>
     <learningobjective name="No learning elements"/>
     <inventoryobjective name="Make a survey"/>
     <inventoryobjective name="Confirm or infirm an existent survey"/>
     <inventoryobjective name="Add additional data to an existent survey"/>
-    <inventoryobjective incompatibleObjectives="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.3 //@objective/@learningobjective.2" name="Identify a tree"/>
+    <inventoryobjective name="Identify a tree" incompatibleObjectives="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
     <gameobjective name="Play a simple solo game"/>
     <gameobjective name="Play a composed solo game"/>
     <gameobjective name="Play a collaborative or cooperative game"/>
@@ -32,4 +32,21 @@
       </gender>
     </family>
   </botanicalflore>
+  <gametypes>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.0 //@objective/@gameobjective.6" name="Identify several trees locations" compatibleinventoryobjective="//@objective/@inventoryobjective.3" compatiblelearningobjective="//@objective/@learningobjective.4" instruction="Can you please..."/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.0 //@objective/@gameobjective.6" name="Identify X located trees" compatibleinventoryobjective="//@objective/@inventoryobjective.0 //@objective/@inventoryobjective.2 //@objective/@inventoryobjective.1" compatiblelearningobjective="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.0 //@objective/@gameobjective.6" name="Identify X trees of the Y species" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.0 //@objective/@gameobjective.6" name="Identify X trees of the Y gender" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.0 //@objective/@gameobjective.6" name="Identify X trees" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.0 //@objective/@learningobjective.1 //@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.0 //@objective/@gameobjective.6" name="Identify X trees with different species" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.6 //@objective/@gameobjective.0" name="Validate X located trees with species or gender information" compatibleinventoryobjective="//@objective/@inventoryobjective.1" compatiblelearningobjective="//@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.6 //@objective/@gameobjective.0" name="Validate X located trees with the same supposed species or gender information" compatibleinventoryobjective="//@objective/@inventoryobjective.1" compatiblelearningobjective="//@objective/@learningobjective.0 //@objective/@learningobjective.1"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.6 //@objective/@gameobjective.0" name="Take a photo while identifying X trees of different species but the same gender" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.6 //@objective/@gameobjective.0" name="Take a photo while identifying X trees of different species" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.4 //@objective/@learningobjective.3 //@objective/@learningobjective.2"/>
+    <gametype compatiblegameobjective="//@objective/@gameobjective.6 //@objective/@gameobjective.0" name="Take a photo while identifying X trees of different species but of a specific gender" compatibleinventoryobjective="//@objective/@inventoryobjective.0" compatiblelearningobjective="//@objective/@learningobjective.1"/>
+  </gametypes>
+  <actions2detect>
+    <action2detect name="newSurveyForOneSpecies" compatibleinventoryobjective="//@objective/@inventoryobjective.0" optionaltarget="//@botanicalflore/@family.0/@gender.1/@species.0 //@botanicalflore/@family.0/@gender.2/@species.0 //@botanicalflore/@family.0/@gender.0/@species.1 //@botanicalflore/@family.0/@gender.0/@species.0"/>
+    <action2detect name="newSurveyForOneGender" compatibleinventoryobjective="//@objective/@inventoryobjective.0" optionaltarget="//@botanicalflore/@family.0/@gender.1 //@botanicalflore/@family.0/@gender.2 //@botanicalflore/@family.0/@gender.0"/>
+  </actions2detect>
 </simuV1:AppDesc>

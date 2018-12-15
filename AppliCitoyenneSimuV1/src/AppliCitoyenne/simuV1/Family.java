@@ -61,9 +61,9 @@ public interface Family extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gender</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getFamily_Gender()
-	 * @model type="AppliCitoyenne.simuV1.Gender" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getGender();
+	EList<Gender> getGender();
 
 } // Family

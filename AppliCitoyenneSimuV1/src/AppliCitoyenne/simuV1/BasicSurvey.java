@@ -35,10 +35,10 @@ public interface BasicSurvey extends BotanicalSurvey {
 	 * @return the value of the '<em>Confirmationsurvey</em>' reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getBasicSurvey_Confirmationsurvey()
 	 * @see AppliCitoyenne.simuV1.ConfirmationSurvey#getBasicsurvey
-	 * @model type="AppliCitoyenne.simuV1.ConfirmationSurvey" opposite="basicsurvey"
+	 * @model opposite="basicsurvey"
 	 * @generated
 	 */
-	EList getConfirmationsurvey();
+	EList<ConfirmationSurvey> getConfirmationsurvey();
 
 	/**
 	 * Returns the value of the '<em><b>Additionalsurvey</b></em>' reference list.
@@ -53,9 +53,9 @@ public interface BasicSurvey extends BotanicalSurvey {
 	 * @return the value of the '<em>Additionalsurvey</em>' reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getBasicSurvey_Additionalsurvey()
 	 * @see AppliCitoyenne.simuV1.AdditionalSurvey#getBasicsurvey
-	 * @model type="AppliCitoyenne.simuV1.AdditionalSurvey" opposite="basicsurvey"
+	 * @model opposite="basicsurvey"
 	 * @generated
 	 */
-	EList getAdditionalsurvey();
+	EList<AdditionalSurvey> getAdditionalsurvey();
 
 } // BasicSurvey

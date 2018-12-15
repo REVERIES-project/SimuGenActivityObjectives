@@ -2,6 +2,7 @@
  */
 package AppliCitoyenne.simuV1;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Inventory Objective</b></em>'.
@@ -13,5 +14,4 @@ package AppliCitoyenne.simuV1;
  * @generated
  */
 public interface InventoryObjective extends Objective {
-
 } // InventoryObjective

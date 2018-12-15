@@ -42,7 +42,7 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList confirmationsurvey;
+	protected EList<ConfirmationSurvey> confirmationsurvey;
 
 	/**
 	 * The cached value of the '{@link #getAdditionalsurvey() <em>Additionalsurvey</em>}' reference list.
@@ -52,7 +52,7 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList additionalsurvey;
+	protected EList<AdditionalSurvey> additionalsurvey;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +68,7 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.BASIC_SURVEY;
 	}
@@ -77,9 +78,9 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getConfirmationsurvey() {
+	public EList<ConfirmationSurvey> getConfirmationsurvey() {
 		if (confirmationsurvey == null) {
-			confirmationsurvey = new EObjectWithInverseResolvingEList(ConfirmationSurvey.class, this, SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY, SimuV1Package.CONFIRMATION_SURVEY__BASICSURVEY);
+			confirmationsurvey = new EObjectWithInverseResolvingEList<ConfirmationSurvey>(ConfirmationSurvey.class, this, SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY, SimuV1Package.CONFIRMATION_SURVEY__BASICSURVEY);
 		}
 		return confirmationsurvey;
 	}
@@ -89,9 +90,9 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getAdditionalsurvey() {
+	public EList<AdditionalSurvey> getAdditionalsurvey() {
 		if (additionalsurvey == null) {
-			additionalsurvey = new EObjectWithInverseResolvingEList(AdditionalSurvey.class, this, SimuV1Package.BASIC_SURVEY__ADDITIONALSURVEY, SimuV1Package.ADDITIONAL_SURVEY__BASICSURVEY);
+			additionalsurvey = new EObjectWithInverseResolvingEList<AdditionalSurvey>(AdditionalSurvey.class, this, SimuV1Package.BASIC_SURVEY__ADDITIONALSURVEY, SimuV1Package.ADDITIONAL_SURVEY__BASICSURVEY);
 		}
 		return additionalsurvey;
 	}
@@ -101,12 +102,14 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY:
-				return ((InternalEList)getConfirmationsurvey()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConfirmationsurvey()).basicAdd(otherEnd, msgs);
 			case SimuV1Package.BASIC_SURVEY__ADDITIONALSURVEY:
-				return ((InternalEList)getAdditionalsurvey()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAdditionalsurvey()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -116,12 +119,13 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY:
-				return ((InternalEList)getConfirmationsurvey()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getConfirmationsurvey()).basicRemove(otherEnd, msgs);
 			case SimuV1Package.BASIC_SURVEY__ADDITIONALSURVEY:
-				return ((InternalEList)getAdditionalsurvey()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getAdditionalsurvey()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -131,6 +135,7 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY:
@@ -146,15 +151,17 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY:
 				getConfirmationsurvey().clear();
-				getConfirmationsurvey().addAll((Collection)newValue);
+				getConfirmationsurvey().addAll((Collection<? extends ConfirmationSurvey>)newValue);
 				return;
 			case SimuV1Package.BASIC_SURVEY__ADDITIONALSURVEY:
 				getAdditionalsurvey().clear();
-				getAdditionalsurvey().addAll((Collection)newValue);
+				getAdditionalsurvey().addAll((Collection<? extends AdditionalSurvey>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,6 +172,7 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY:
@@ -182,6 +190,7 @@ public class BasicSurveyImpl extends BotanicalSurveyImpl implements BasicSurvey 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BASIC_SURVEY__CONFIRMATIONSURVEY:

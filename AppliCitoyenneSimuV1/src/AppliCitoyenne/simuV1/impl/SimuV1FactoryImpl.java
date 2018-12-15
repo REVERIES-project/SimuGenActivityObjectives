@@ -53,6 +53,7 @@ public class SimuV1FactoryImpl extends EFactoryImpl implements SimuV1Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case SimuV1Package.CONTEXT: return createContext();
@@ -78,6 +79,17 @@ public class SimuV1FactoryImpl extends EFactoryImpl implements SimuV1Factory {
 			case SimuV1Package.GAME_OBJECTIVE: return createGameObjective();
 			case SimuV1Package.BOTANICAL_STAT: return createBotanicalStat();
 			case SimuV1Package.GAME_TYPE_PREF: return createGameTypePref();
+			case SimuV1Package.GAME_TYPE: return createGameType();
+			case SimuV1Package.ACTION2_DETECT: return createAction2Detect();
+			case SimuV1Package.GAME_TYPE_COMP: return createGameTypeComp();
+			case SimuV1Package.SIMPLE_TASK: return createSimpleTask();
+			case SimuV1Package.RECURRENT_TASK: return createRecurrentTask();
+			case SimuV1Package.GAME_TYPES: return createGameTypes();
+			case SimuV1Package.ACTIONS2_DETECT: return createActions2Detect();
+			case SimuV1Package.TASK_COMP: return createTaskComp();
+			case SimuV1Package.BASIC_SURVEY_EXISTENCE: return createBasicSurveyExistence();
+			case SimuV1Package.SIMPLE_SURVEY_EXISTENCE: return createSimpleSurveyExistence();
+			case SimuV1Package.RELIABLE_BASIC_SURVEY_EXISTENCE: return createReliableBasicSurveyExistence();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -318,6 +330,116 @@ public class SimuV1FactoryImpl extends EFactoryImpl implements SimuV1Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GameType createGameType() {
+		GameTypeImpl gameType = new GameTypeImpl();
+		return gameType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action2Detect createAction2Detect() {
+		Action2DetectImpl action2Detect = new Action2DetectImpl();
+		return action2Detect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GameTypeComp createGameTypeComp() {
+		GameTypeCompImpl gameTypeComp = new GameTypeCompImpl();
+		return gameTypeComp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SimpleTask createSimpleTask() {
+		SimpleTaskImpl simpleTask = new SimpleTaskImpl();
+		return simpleTask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrentTask createRecurrentTask() {
+		RecurrentTaskImpl recurrentTask = new RecurrentTaskImpl();
+		return recurrentTask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GameTypes createGameTypes() {
+		GameTypesImpl gameTypes = new GameTypesImpl();
+		return gameTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Actions2Detect createActions2Detect() {
+		Actions2DetectImpl actions2Detect = new Actions2DetectImpl();
+		return actions2Detect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TaskComp createTaskComp() {
+		TaskCompImpl taskComp = new TaskCompImpl();
+		return taskComp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BasicSurveyExistence createBasicSurveyExistence() {
+		BasicSurveyExistenceImpl basicSurveyExistence = new BasicSurveyExistenceImpl();
+		return basicSurveyExistence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SimpleSurveyExistence createSimpleSurveyExistence() {
+		SimpleSurveyExistenceImpl simpleSurveyExistence = new SimpleSurveyExistenceImpl();
+		return simpleSurveyExistence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReliableBasicSurveyExistence createReliableBasicSurveyExistence() {
+		ReliableBasicSurveyExistenceImpl reliableBasicSurveyExistence = new ReliableBasicSurveyExistenceImpl();
+		return reliableBasicSurveyExistence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimuV1Package getSimuV1Package() {
 		return (SimuV1Package)getEPackage();
 	}
@@ -328,6 +450,7 @@ public class SimuV1FactoryImpl extends EFactoryImpl implements SimuV1Factory {
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static SimuV1Package getPackage() {
 		return SimuV1Package.eINSTANCE;
 	}

@@ -16,6 +16,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="botanicalflore" eType="#//BotanicalFlore"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gametypes" eType="#//GameTypes"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions2detect" eType="#//Actions2Detect"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InventoryObjective" eSuperTypes="#//Objective">
     <eAnnotations source="exeed">
@@ -127,6 +131,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="learningobjective" eType="#//LearningObjective"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="profile" eType="#//Profile"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gameobjective" eType="#//GameObjective"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instruction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gameZone" eType="#//Zone"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gametypecomp" eType="#//GameTypeComp"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gametype" eType="#//GameType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BotanicalFlore">
     <eAnnotations source="exeed">
@@ -150,13 +160,11 @@
     <eAnnotations source="exeed">
       <details key="classIcon" value="class"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gender" eSuperTypes="#//Target">
     <eAnnotations source="exeed">
       <details key="classIcon" value="class"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="species" upperBound="-1"
         eType="#//Species" containment="true"/>
   </eClassifiers>
@@ -168,7 +176,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="gender" upperBound="-1"
         eType="#//Gender" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GameObjective" eSuperTypes="#//Objective">
     <eAnnotations source="exeed">
       <details key="classIcon" value="competitor"/>
@@ -187,8 +197,59 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="gameobjective" eType="#//GameObjective"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Objective" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incompatibleObjectives"
         upperBound="-1" eType="#//Objective"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compatiblegameobjective"
+        upperBound="-1" eType="#//GameObjective"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compatibleinventoryobjective"
+        upperBound="-1" eType="#//InventoryObjective"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compatiblelearningobjective"
+        upperBound="-1" eType="#//LearningObjective"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instruction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action2Detect">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compatibleinventoryobjective"
+        upperBound="-1" eType="#//InventoryObjective"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionaltarget" upperBound="-1"
+        eType="#//Target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameTypeComp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gametype" eType="#//GameType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="times" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredTask" abstract="true" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compatibleaction2detect"
+        upperBound="-1" eType="#//Action2Detect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RecurrentTask" eSuperTypes="#//StructuredTask">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtask" eType="#//SimpleTask"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GameTypes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gametype" upperBound="-1"
+        eType="#//GameType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actions2Detect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action2detect" upperBound="-1"
+        eType="#//Action2Detect" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskComp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action2detect" eType="#//Action2Detect"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newspeciessurvey" eType="#//Target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicSurveyExistence" eSuperTypes="#//Constraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleSurveyExistence" eSuperTypes="#//Constraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReliableBasicSurveyExistence" eSuperTypes="#//Constraint"/>
 </ecore:EPackage>

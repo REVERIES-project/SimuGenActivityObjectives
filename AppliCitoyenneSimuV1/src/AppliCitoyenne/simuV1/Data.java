@@ -35,10 +35,10 @@ public interface Data extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Profiles</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getData_Profiles()
-	 * @model type="AppliCitoyenne.simuV1.Profile" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getProfiles();
+	EList<Profile> getProfiles();
 
 	/**
 	 * Returns the value of the '<em><b>Botanicalsurveys</b></em>' containment reference list.
@@ -51,9 +51,9 @@ public interface Data extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Botanicalsurveys</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getData_Botanicalsurveys()
-	 * @model type="AppliCitoyenne.simuV1.BotanicalSurvey" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getBotanicalsurveys();
+	EList<BotanicalSurvey> getBotanicalsurveys();
 
 } // Data

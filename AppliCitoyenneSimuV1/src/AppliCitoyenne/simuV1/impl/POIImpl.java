@@ -81,6 +81,7 @@ public class POIImpl extends MinimalEObjectImpl.Container implements POI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.POI;
 	}
@@ -132,12 +133,13 @@ public class POIImpl extends MinimalEObjectImpl.Container implements POI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.POI__Y:
-				return new Integer(getY());
+				return getY();
 			case SimuV1Package.POI__X:
-				return new Integer(getX());
+				return getX();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -147,13 +149,14 @@ public class POIImpl extends MinimalEObjectImpl.Container implements POI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.POI__Y:
-				setY(((Integer)newValue).intValue());
+				setY((Integer)newValue);
 				return;
 			case SimuV1Package.POI__X:
-				setX(((Integer)newValue).intValue());
+				setX((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -164,6 +167,7 @@ public class POIImpl extends MinimalEObjectImpl.Container implements POI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.POI__Y:
@@ -181,6 +185,7 @@ public class POIImpl extends MinimalEObjectImpl.Container implements POI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.POI__Y:
@@ -196,6 +201,7 @@ public class POIImpl extends MinimalEObjectImpl.Container implements POI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

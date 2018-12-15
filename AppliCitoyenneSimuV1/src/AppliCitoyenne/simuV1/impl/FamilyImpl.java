@@ -65,7 +65,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList gender;
+	protected EList<Gender> gender;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,6 +81,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.FAMILY;
 	}
@@ -111,9 +112,9 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getGender() {
+	public EList<Gender> getGender() {
 		if (gender == null) {
-			gender = new EObjectContainmentEList(Gender.class, this, SimuV1Package.FAMILY__GENDER);
+			gender = new EObjectContainmentEList<Gender>(Gender.class, this, SimuV1Package.FAMILY__GENDER);
 		}
 		return gender;
 	}
@@ -123,10 +124,11 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.FAMILY__GENDER:
-				return ((InternalEList)getGender()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getGender()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,6 +138,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.FAMILY__NAME:
@@ -151,6 +154,8 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.FAMILY__NAME:
@@ -158,7 +163,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 				return;
 			case SimuV1Package.FAMILY__GENDER:
 				getGender().clear();
-				getGender().addAll((Collection)newValue);
+				getGender().addAll((Collection<? extends Gender>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,6 +174,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.FAMILY__NAME:
@@ -186,6 +192,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.FAMILY__NAME:
@@ -201,6 +208,7 @@ public class FamilyImpl extends MinimalEObjectImpl.Container implements Family {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

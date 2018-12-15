@@ -73,6 +73,7 @@ public class GameTypePrefImpl extends MinimalEObjectImpl.Container implements Ga
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.GAME_TYPE_PREF;
 	}
@@ -141,10 +142,11 @@ public class GameTypePrefImpl extends MinimalEObjectImpl.Container implements Ga
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.GAME_TYPE_PREF__PONDERATION:
-				return new Integer(getPonderation());
+				return getPonderation();
 			case SimuV1Package.GAME_TYPE_PREF__GAMEOBJECTIVE:
 				if (resolve) return getGameobjective();
 				return basicGetGameobjective();
@@ -157,10 +159,11 @@ public class GameTypePrefImpl extends MinimalEObjectImpl.Container implements Ga
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.GAME_TYPE_PREF__PONDERATION:
-				setPonderation(((Integer)newValue).intValue());
+				setPonderation((Integer)newValue);
 				return;
 			case SimuV1Package.GAME_TYPE_PREF__GAMEOBJECTIVE:
 				setGameobjective((GameObjective)newValue);
@@ -174,6 +177,7 @@ public class GameTypePrefImpl extends MinimalEObjectImpl.Container implements Ga
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.GAME_TYPE_PREF__PONDERATION:
@@ -191,6 +195,7 @@ public class GameTypePrefImpl extends MinimalEObjectImpl.Container implements Ga
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.GAME_TYPE_PREF__PONDERATION:
@@ -206,6 +211,7 @@ public class GameTypePrefImpl extends MinimalEObjectImpl.Container implements Ga
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

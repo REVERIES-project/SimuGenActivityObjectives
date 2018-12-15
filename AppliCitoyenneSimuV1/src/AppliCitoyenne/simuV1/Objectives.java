@@ -36,10 +36,10 @@ public interface Objectives extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Learningobjective</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getObjectives_Learningobjective()
-	 * @model type="AppliCitoyenne.simuV1.LearningObjective" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getLearningobjective();
+	EList<LearningObjective> getLearningobjective();
 
 	/**
 	 * Returns the value of the '<em><b>Inventoryobjective</b></em>' containment reference list.
@@ -52,10 +52,10 @@ public interface Objectives extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inventoryobjective</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getObjectives_Inventoryobjective()
-	 * @model type="AppliCitoyenne.simuV1.InventoryObjective" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getInventoryobjective();
+	EList<InventoryObjective> getInventoryobjective();
 
 	/**
 	 * Returns the value of the '<em><b>Gameobjective</b></em>' containment reference list.
@@ -68,9 +68,9 @@ public interface Objectives extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gameobjective</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getObjectives_Gameobjective()
-	 * @model type="AppliCitoyenne.simuV1.GameObjective" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getGameobjective();
+	EList<GameObjective> getGameobjective();
 
 } // Objectives

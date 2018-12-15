@@ -31,6 +31,7 @@ public abstract class ZoneImpl extends MinimalEObjectImpl.Container implements Z
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.ZONE;
 	}

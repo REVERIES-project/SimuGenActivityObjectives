@@ -48,6 +48,7 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -64,90 +65,174 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SimuV1Switch modelSwitch =
-		new SimuV1Switch() {
-			public Object caseContext(Context object) {
+	protected SimuV1Switch<Adapter> modelSwitch =
+		new SimuV1Switch<Adapter>() {
+			@Override
+			public Adapter caseContext(Context object) {
 				return createContextAdapter();
 			}
-			public Object caseAppDesc(AppDesc object) {
+			@Override
+			public Adapter caseAppDesc(AppDesc object) {
 				return createAppDescAdapter();
 			}
-			public Object caseInventoryObjective(InventoryObjective object) {
+			@Override
+			public Adapter caseInventoryObjective(InventoryObjective object) {
 				return createInventoryObjectiveAdapter();
 			}
-			public Object caseLearningObjective(LearningObjective object) {
+			@Override
+			public Adapter caseLearningObjective(LearningObjective object) {
 				return createLearningObjectiveAdapter();
 			}
-			public Object caseZone(Zone object) {
+			@Override
+			public Adapter caseZone(Zone object) {
 				return createZoneAdapter();
 			}
-			public Object caseZoneCirculaire(ZoneCirculaire object) {
+			@Override
+			public Adapter caseZoneCirculaire(ZoneCirculaire object) {
 				return createZoneCirculaireAdapter();
 			}
-			public Object caseProfile(Profile object) {
+			@Override
+			public Adapter caseProfile(Profile object) {
 				return createProfileAdapter();
 			}
-			public Object caseData(Data object) {
+			@Override
+			public Adapter caseData(Data object) {
 				return createDataAdapter();
 			}
-			public Object caseInventoryProfile(InventoryProfile object) {
+			@Override
+			public Adapter caseInventoryProfile(InventoryProfile object) {
 				return createInventoryProfileAdapter();
 			}
-			public Object caseBotanicalProfile(BotanicalProfile object) {
+			@Override
+			public Adapter caseBotanicalProfile(BotanicalProfile object) {
 				return createBotanicalProfileAdapter();
 			}
-			public Object caseGameProfile(GameProfile object) {
+			@Override
+			public Adapter caseGameProfile(GameProfile object) {
 				return createGameProfileAdapter();
 			}
-			public Object caseBotanicalSurvey(BotanicalSurvey object) {
+			@Override
+			public Adapter caseBotanicalSurvey(BotanicalSurvey object) {
 				return createBotanicalSurveyAdapter();
 			}
-			public Object caseBasicSurvey(BasicSurvey object) {
+			@Override
+			public Adapter caseBasicSurvey(BasicSurvey object) {
 				return createBasicSurveyAdapter();
 			}
-			public Object caseConfirmationSurvey(ConfirmationSurvey object) {
+			@Override
+			public Adapter caseConfirmationSurvey(ConfirmationSurvey object) {
 				return createConfirmationSurveyAdapter();
 			}
-			public Object caseAdditionalSurvey(AdditionalSurvey object) {
+			@Override
+			public Adapter caseAdditionalSurvey(AdditionalSurvey object) {
 				return createAdditionalSurveyAdapter();
 			}
-			public Object casePOI(POI object) {
+			@Override
+			public Adapter casePOI(POI object) {
 				return createPOIAdapter();
 			}
-			public Object caseActivity(Activity object) {
+			@Override
+			public Adapter caseActivity(Activity object) {
 				return createActivityAdapter();
 			}
-			public Object caseBotanicalFlore(BotanicalFlore object) {
+			@Override
+			public Adapter caseBotanicalFlore(BotanicalFlore object) {
 				return createBotanicalFloreAdapter();
 			}
-			public Object caseObjectives(Objectives object) {
+			@Override
+			public Adapter caseObjectives(Objectives object) {
 				return createObjectivesAdapter();
 			}
-			public Object caseSpecies(Species object) {
+			@Override
+			public Adapter caseSpecies(Species object) {
 				return createSpeciesAdapter();
 			}
-			public Object caseGender(Gender object) {
+			@Override
+			public Adapter caseGender(Gender object) {
 				return createGenderAdapter();
 			}
-			public Object caseFamily(Family object) {
+			@Override
+			public Adapter caseFamily(Family object) {
 				return createFamilyAdapter();
 			}
-			public Object caseTarget(Target object) {
+			@Override
+			public Adapter caseTarget(Target object) {
 				return createTargetAdapter();
 			}
-			public Object caseGameObjective(GameObjective object) {
+			@Override
+			public Adapter caseGameObjective(GameObjective object) {
 				return createGameObjectiveAdapter();
 			}
-			public Object caseBotanicalStat(BotanicalStat object) {
+			@Override
+			public Adapter caseBotanicalStat(BotanicalStat object) {
 				return createBotanicalStatAdapter();
 			}
-			public Object caseGameTypePref(GameTypePref object) {
+			@Override
+			public Adapter caseGameTypePref(GameTypePref object) {
 				return createGameTypePrefAdapter();
 			}
-			public Object caseObjective(Objective object) {
+			@Override
+			public Adapter caseObjective(Objective object) {
 				return createObjectiveAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter caseGameType(GameType object) {
+				return createGameTypeAdapter();
+			}
+			@Override
+			public Adapter caseAction2Detect(Action2Detect object) {
+				return createAction2DetectAdapter();
+			}
+			@Override
+			public Adapter caseGameTypeComp(GameTypeComp object) {
+				return createGameTypeCompAdapter();
+			}
+			@Override
+			public Adapter caseStructuredTask(StructuredTask object) {
+				return createStructuredTaskAdapter();
+			}
+			@Override
+			public Adapter caseTask(Task object) {
+				return createTaskAdapter();
+			}
+			@Override
+			public Adapter caseSimpleTask(SimpleTask object) {
+				return createSimpleTaskAdapter();
+			}
+			@Override
+			public Adapter caseRecurrentTask(RecurrentTask object) {
+				return createRecurrentTaskAdapter();
+			}
+			@Override
+			public Adapter caseGameTypes(GameTypes object) {
+				return createGameTypesAdapter();
+			}
+			@Override
+			public Adapter caseActions2Detect(Actions2Detect object) {
+				return createActions2DetectAdapter();
+			}
+			@Override
+			public Adapter caseTaskComp(TaskComp object) {
+				return createTaskCompAdapter();
+			}
+			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseBasicSurveyExistence(BasicSurveyExistence object) {
+				return createBasicSurveyExistenceAdapter();
+			}
+			@Override
+			public Adapter caseSimpleSurveyExistence(SimpleSurveyExistence object) {
+				return createSimpleSurveyExistenceAdapter();
+			}
+			@Override
+			public Adapter caseReliableBasicSurveyExistence(ReliableBasicSurveyExistence object) {
+				return createReliableBasicSurveyExistenceAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -160,8 +245,9 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 
@@ -540,6 +626,202 @@ public class SimuV1AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createObjectiveAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.GameType <em>Game Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.GameType
+	 * @generated
+	 */
+	public Adapter createGameTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.Action2Detect <em>Action2 Detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.Action2Detect
+	 * @generated
+	 */
+	public Adapter createAction2DetectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.GameTypeComp <em>Game Type Comp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.GameTypeComp
+	 * @generated
+	 */
+	public Adapter createGameTypeCompAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.StructuredTask <em>Structured Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.StructuredTask
+	 * @generated
+	 */
+	public Adapter createStructuredTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.Task <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.Task
+	 * @generated
+	 */
+	public Adapter createTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.SimpleTask <em>Simple Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.SimpleTask
+	 * @generated
+	 */
+	public Adapter createSimpleTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.RecurrentTask <em>Recurrent Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.RecurrentTask
+	 * @generated
+	 */
+	public Adapter createRecurrentTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.GameTypes <em>Game Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.GameTypes
+	 * @generated
+	 */
+	public Adapter createGameTypesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.Actions2Detect <em>Actions2 Detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.Actions2Detect
+	 * @generated
+	 */
+	public Adapter createActions2DetectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.TaskComp <em>Task Comp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.TaskComp
+	 * @generated
+	 */
+	public Adapter createTaskCompAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.Constraint
+	 * @generated
+	 */
+	public Adapter createConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.BasicSurveyExistence <em>Basic Survey Existence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.BasicSurveyExistence
+	 * @generated
+	 */
+	public Adapter createBasicSurveyExistenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.SimpleSurveyExistence <em>Simple Survey Existence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.SimpleSurveyExistence
+	 * @generated
+	 */
+	public Adapter createSimpleSurveyExistenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link AppliCitoyenne.simuV1.ReliableBasicSurveyExistence <em>Reliable Basic Survey Existence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see AppliCitoyenne.simuV1.ReliableBasicSurveyExistence
+	 * @generated
+	 */
+	public Adapter createReliableBasicSurveyExistenceAdapter() {
 		return null;
 	}
 

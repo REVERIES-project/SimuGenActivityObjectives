@@ -122,7 +122,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * @generated
 	 * @ordered
 	 */
-	protected EList botanicalsurvey;
+	protected EList<BotanicalSurvey> botanicalsurvey;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +138,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.PROFILE;
 	}
@@ -318,9 +319,9 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getBotanicalsurvey() {
+	public EList<BotanicalSurvey> getBotanicalsurvey() {
 		if (botanicalsurvey == null) {
-			botanicalsurvey = new EObjectWithInverseResolvingEList(BotanicalSurvey.class, this, SimuV1Package.PROFILE__BOTANICALSURVEY, SimuV1Package.BOTANICAL_SURVEY__PROFILE);
+			botanicalsurvey = new EObjectWithInverseResolvingEList<BotanicalSurvey>(BotanicalSurvey.class, this, SimuV1Package.PROFILE__BOTANICALSURVEY, SimuV1Package.BOTANICAL_SURVEY__PROFILE);
 		}
 		return botanicalsurvey;
 	}
@@ -330,10 +331,12 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.PROFILE__BOTANICALSURVEY:
-				return ((InternalEList)getBotanicalsurvey()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBotanicalsurvey()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -343,6 +346,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.PROFILE__INVENTORYPROFILE:
@@ -352,7 +356,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 			case SimuV1Package.PROFILE__GAMEPROFILE:
 				return basicSetGameprofile(null, msgs);
 			case SimuV1Package.PROFILE__BOTANICALSURVEY:
-				return ((InternalEList)getBotanicalsurvey()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getBotanicalsurvey()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,6 +366,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.PROFILE__FIRSTNAME:
@@ -385,6 +390,8 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.PROFILE__FIRSTNAME:
@@ -404,7 +411,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 				return;
 			case SimuV1Package.PROFILE__BOTANICALSURVEY:
 				getBotanicalsurvey().clear();
-				getBotanicalsurvey().addAll((Collection)newValue);
+				getBotanicalsurvey().addAll((Collection<? extends BotanicalSurvey>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -415,6 +422,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.PROFILE__FIRSTNAME:
@@ -444,6 +452,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.PROFILE__FIRSTNAME:
@@ -467,6 +476,7 @@ public class ProfileImpl extends MinimalEObjectImpl.Container implements Profile
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

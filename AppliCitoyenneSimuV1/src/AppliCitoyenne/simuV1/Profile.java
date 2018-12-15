@@ -171,9 +171,9 @@ public interface Profile extends EObject {
 	 * @return the value of the '<em>Botanicalsurvey</em>' reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getProfile_Botanicalsurvey()
 	 * @see AppliCitoyenne.simuV1.BotanicalSurvey#getProfile
-	 * @model type="AppliCitoyenne.simuV1.BotanicalSurvey" opposite="profile"
+	 * @model opposite="profile"
 	 * @generated
 	 */
-	EList getBotanicalsurvey();
+	EList<BotanicalSurvey> getBotanicalsurvey();
 
 } // Profile

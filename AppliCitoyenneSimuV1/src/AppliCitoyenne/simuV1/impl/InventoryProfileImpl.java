@@ -31,6 +31,7 @@ public class InventoryProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.INVENTORY_PROFILE;
 	}

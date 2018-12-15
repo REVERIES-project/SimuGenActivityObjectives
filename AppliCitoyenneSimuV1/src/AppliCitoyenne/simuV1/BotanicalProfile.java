@@ -35,10 +35,10 @@ public interface BotanicalProfile extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Botanicalstat</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getBotanicalProfile_Botanicalstat()
-	 * @model type="AppliCitoyenne.simuV1.BotanicalStat" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getBotanicalstat();
+	EList<BotanicalStat> getBotanicalstat();
 
 	/**
 	 * Returns the value of the '<em><b>No Interest</b></em>' attribute.

@@ -45,7 +45,7 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * @generated
 	 * @ordered
 	 */
-	protected EList gametypepref;
+	protected EList<GameTypePref> gametypepref;
 
 	/**
 	 * The default value of the '{@link #isNoInterest() <em>No Interest</em>}' attribute.
@@ -81,6 +81,7 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.GAME_PROFILE;
 	}
@@ -90,9 +91,9 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getGametypepref() {
+	public EList<GameTypePref> getGametypepref() {
 		if (gametypepref == null) {
-			gametypepref = new EObjectContainmentEList(GameTypePref.class, this, SimuV1Package.GAME_PROFILE__GAMETYPEPREF);
+			gametypepref = new EObjectContainmentEList<GameTypePref>(GameTypePref.class, this, SimuV1Package.GAME_PROFILE__GAMETYPEPREF);
 		}
 		return gametypepref;
 	}
@@ -123,10 +124,11 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.GAME_PROFILE__GAMETYPEPREF:
-				return ((InternalEList)getGametypepref()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getGametypepref()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,12 +138,13 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.GAME_PROFILE__GAMETYPEPREF:
 				return getGametypepref();
 			case SimuV1Package.GAME_PROFILE__NO_INTEREST:
-				return isNoInterest() ? Boolean.TRUE : Boolean.FALSE;
+				return isNoInterest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,14 +154,16 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.GAME_PROFILE__GAMETYPEPREF:
 				getGametypepref().clear();
-				getGametypepref().addAll((Collection)newValue);
+				getGametypepref().addAll((Collection<? extends GameTypePref>)newValue);
 				return;
 			case SimuV1Package.GAME_PROFILE__NO_INTEREST:
-				setNoInterest(((Boolean)newValue).booleanValue());
+				setNoInterest((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,6 +174,7 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.GAME_PROFILE__GAMETYPEPREF:
@@ -186,6 +192,7 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.GAME_PROFILE__GAMETYPEPREF:
@@ -201,6 +208,7 @@ public class GameProfileImpl extends MinimalEObjectImpl.Container implements Gam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

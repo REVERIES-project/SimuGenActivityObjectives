@@ -142,6 +142,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.BOTANICAL_SURVEY;
 	}
@@ -355,6 +356,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_SURVEY__PROFILE:
@@ -370,6 +372,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_SURVEY__PROFILE:
@@ -385,6 +388,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_SURVEY__PROFILE:
@@ -400,7 +404,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 			case SimuV1Package.BOTANICAL_SURVEY__ID:
 				return getId();
 			case SimuV1Package.BOTANICAL_SURVEY__RELIABILITY_SCORE:
-				return new Integer(getReliabilityScore());
+				return getReliabilityScore();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -410,6 +414,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_SURVEY__PROFILE:
@@ -428,7 +433,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 				setId((String)newValue);
 				return;
 			case SimuV1Package.BOTANICAL_SURVEY__RELIABILITY_SCORE:
-				setReliabilityScore(((Integer)newValue).intValue());
+				setReliabilityScore((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -439,6 +444,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_SURVEY__PROFILE:
@@ -468,6 +474,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_SURVEY__PROFILE:
@@ -491,6 +498,7 @@ public abstract class BotanicalSurveyImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

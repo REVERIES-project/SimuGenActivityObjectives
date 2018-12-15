@@ -46,7 +46,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * @generated
 	 * @ordered
 	 */
-	protected EList learningobjective;
+	protected EList<LearningObjective> learningobjective;
 
 	/**
 	 * The cached value of the '{@link #getInventoryobjective() <em>Inventoryobjective</em>}' containment reference list.
@@ -56,7 +56,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * @generated
 	 * @ordered
 	 */
-	protected EList inventoryobjective;
+	protected EList<InventoryObjective> inventoryobjective;
 
 	/**
 	 * The cached value of the '{@link #getGameobjective() <em>Gameobjective</em>}' containment reference list.
@@ -66,7 +66,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * @generated
 	 * @ordered
 	 */
-	protected EList gameobjective;
+	protected EList<GameObjective> gameobjective;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,6 +82,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.OBJECTIVES;
 	}
@@ -91,9 +92,9 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getLearningobjective() {
+	public EList<LearningObjective> getLearningobjective() {
 		if (learningobjective == null) {
-			learningobjective = new EObjectContainmentEList(LearningObjective.class, this, SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE);
+			learningobjective = new EObjectContainmentEList<LearningObjective>(LearningObjective.class, this, SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE);
 		}
 		return learningobjective;
 	}
@@ -103,9 +104,9 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInventoryobjective() {
+	public EList<InventoryObjective> getInventoryobjective() {
 		if (inventoryobjective == null) {
-			inventoryobjective = new EObjectContainmentEList(InventoryObjective.class, this, SimuV1Package.OBJECTIVES__INVENTORYOBJECTIVE);
+			inventoryobjective = new EObjectContainmentEList<InventoryObjective>(InventoryObjective.class, this, SimuV1Package.OBJECTIVES__INVENTORYOBJECTIVE);
 		}
 		return inventoryobjective;
 	}
@@ -115,9 +116,9 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getGameobjective() {
+	public EList<GameObjective> getGameobjective() {
 		if (gameobjective == null) {
-			gameobjective = new EObjectContainmentEList(GameObjective.class, this, SimuV1Package.OBJECTIVES__GAMEOBJECTIVE);
+			gameobjective = new EObjectContainmentEList<GameObjective>(GameObjective.class, this, SimuV1Package.OBJECTIVES__GAMEOBJECTIVE);
 		}
 		return gameobjective;
 	}
@@ -127,14 +128,15 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE:
-				return ((InternalEList)getLearningobjective()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getLearningobjective()).basicRemove(otherEnd, msgs);
 			case SimuV1Package.OBJECTIVES__INVENTORYOBJECTIVE:
-				return ((InternalEList)getInventoryobjective()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInventoryobjective()).basicRemove(otherEnd, msgs);
 			case SimuV1Package.OBJECTIVES__GAMEOBJECTIVE:
-				return ((InternalEList)getGameobjective()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getGameobjective()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -144,6 +146,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE:
@@ -161,19 +164,21 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE:
 				getLearningobjective().clear();
-				getLearningobjective().addAll((Collection)newValue);
+				getLearningobjective().addAll((Collection<? extends LearningObjective>)newValue);
 				return;
 			case SimuV1Package.OBJECTIVES__INVENTORYOBJECTIVE:
 				getInventoryobjective().clear();
-				getInventoryobjective().addAll((Collection)newValue);
+				getInventoryobjective().addAll((Collection<? extends InventoryObjective>)newValue);
 				return;
 			case SimuV1Package.OBJECTIVES__GAMEOBJECTIVE:
 				getGameobjective().clear();
-				getGameobjective().addAll((Collection)newValue);
+				getGameobjective().addAll((Collection<? extends GameObjective>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,6 +189,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE:
@@ -204,6 +210,7 @@ public class ObjectivesImpl extends MinimalEObjectImpl.Container implements Obje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.OBJECTIVES__LEARNINGOBJECTIVE:

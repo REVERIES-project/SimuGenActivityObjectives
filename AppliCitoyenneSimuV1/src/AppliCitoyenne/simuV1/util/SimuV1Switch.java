@@ -4,10 +4,10 @@ package AppliCitoyenne.simuV1.util;
 
 import AppliCitoyenne.simuV1.*;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see AppliCitoyenne.simuV1.SimuV1Package
  * @generated
  */
-public class SimuV1Switch {
+public class SimuV1Switch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -44,14 +44,16 @@ public class SimuV1Switch {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -61,196 +63,268 @@ public class SimuV1Switch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case SimuV1Package.CONTEXT: {
 				Context context = (Context)theEObject;
-				Object result = caseContext(context);
+				T result = caseContext(context);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.APP_DESC: {
 				AppDesc appDesc = (AppDesc)theEObject;
-				Object result = caseAppDesc(appDesc);
+				T result = caseAppDesc(appDesc);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.INVENTORY_OBJECTIVE: {
 				InventoryObjective inventoryObjective = (InventoryObjective)theEObject;
-				Object result = caseInventoryObjective(inventoryObjective);
+				T result = caseInventoryObjective(inventoryObjective);
 				if (result == null) result = caseObjective(inventoryObjective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.LEARNING_OBJECTIVE: {
 				LearningObjective learningObjective = (LearningObjective)theEObject;
-				Object result = caseLearningObjective(learningObjective);
+				T result = caseLearningObjective(learningObjective);
 				if (result == null) result = caseObjective(learningObjective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.ZONE: {
 				Zone zone = (Zone)theEObject;
-				Object result = caseZone(zone);
+				T result = caseZone(zone);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.ZONE_CIRCULAIRE: {
 				ZoneCirculaire zoneCirculaire = (ZoneCirculaire)theEObject;
-				Object result = caseZoneCirculaire(zoneCirculaire);
+				T result = caseZoneCirculaire(zoneCirculaire);
 				if (result == null) result = caseZone(zoneCirculaire);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.PROFILE: {
 				Profile profile = (Profile)theEObject;
-				Object result = caseProfile(profile);
+				T result = caseProfile(profile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.DATA: {
 				Data data = (Data)theEObject;
-				Object result = caseData(data);
+				T result = caseData(data);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.INVENTORY_PROFILE: {
 				InventoryProfile inventoryProfile = (InventoryProfile)theEObject;
-				Object result = caseInventoryProfile(inventoryProfile);
+				T result = caseInventoryProfile(inventoryProfile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.BOTANICAL_PROFILE: {
 				BotanicalProfile botanicalProfile = (BotanicalProfile)theEObject;
-				Object result = caseBotanicalProfile(botanicalProfile);
+				T result = caseBotanicalProfile(botanicalProfile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.GAME_PROFILE: {
 				GameProfile gameProfile = (GameProfile)theEObject;
-				Object result = caseGameProfile(gameProfile);
+				T result = caseGameProfile(gameProfile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.BOTANICAL_SURVEY: {
 				BotanicalSurvey botanicalSurvey = (BotanicalSurvey)theEObject;
-				Object result = caseBotanicalSurvey(botanicalSurvey);
+				T result = caseBotanicalSurvey(botanicalSurvey);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.BASIC_SURVEY: {
 				BasicSurvey basicSurvey = (BasicSurvey)theEObject;
-				Object result = caseBasicSurvey(basicSurvey);
+				T result = caseBasicSurvey(basicSurvey);
 				if (result == null) result = caseBotanicalSurvey(basicSurvey);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.CONFIRMATION_SURVEY: {
 				ConfirmationSurvey confirmationSurvey = (ConfirmationSurvey)theEObject;
-				Object result = caseConfirmationSurvey(confirmationSurvey);
+				T result = caseConfirmationSurvey(confirmationSurvey);
 				if (result == null) result = caseBotanicalSurvey(confirmationSurvey);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.ADDITIONAL_SURVEY: {
 				AdditionalSurvey additionalSurvey = (AdditionalSurvey)theEObject;
-				Object result = caseAdditionalSurvey(additionalSurvey);
+				T result = caseAdditionalSurvey(additionalSurvey);
 				if (result == null) result = caseBotanicalSurvey(additionalSurvey);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.POI: {
 				POI poi = (POI)theEObject;
-				Object result = casePOI(poi);
+				T result = casePOI(poi);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.ACTIVITY: {
 				Activity activity = (Activity)theEObject;
-				Object result = caseActivity(activity);
+				T result = caseActivity(activity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.BOTANICAL_FLORE: {
 				BotanicalFlore botanicalFlore = (BotanicalFlore)theEObject;
-				Object result = caseBotanicalFlore(botanicalFlore);
+				T result = caseBotanicalFlore(botanicalFlore);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.OBJECTIVES: {
 				Objectives objectives = (Objectives)theEObject;
-				Object result = caseObjectives(objectives);
+				T result = caseObjectives(objectives);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.SPECIES: {
 				Species species = (Species)theEObject;
-				Object result = caseSpecies(species);
+				T result = caseSpecies(species);
 				if (result == null) result = caseTarget(species);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.GENDER: {
 				Gender gender = (Gender)theEObject;
-				Object result = caseGender(gender);
+				T result = caseGender(gender);
 				if (result == null) result = caseTarget(gender);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.FAMILY: {
 				Family family = (Family)theEObject;
-				Object result = caseFamily(family);
+				T result = caseFamily(family);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.TARGET: {
 				Target target = (Target)theEObject;
-				Object result = caseTarget(target);
+				T result = caseTarget(target);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.GAME_OBJECTIVE: {
 				GameObjective gameObjective = (GameObjective)theEObject;
-				Object result = caseGameObjective(gameObjective);
+				T result = caseGameObjective(gameObjective);
 				if (result == null) result = caseObjective(gameObjective);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.BOTANICAL_STAT: {
 				BotanicalStat botanicalStat = (BotanicalStat)theEObject;
-				Object result = caseBotanicalStat(botanicalStat);
+				T result = caseBotanicalStat(botanicalStat);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.GAME_TYPE_PREF: {
 				GameTypePref gameTypePref = (GameTypePref)theEObject;
-				Object result = caseGameTypePref(gameTypePref);
+				T result = caseGameTypePref(gameTypePref);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SimuV1Package.OBJECTIVE: {
 				Objective objective = (Objective)theEObject;
-				Object result = caseObjective(objective);
+				T result = caseObjective(objective);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.GAME_TYPE: {
+				GameType gameType = (GameType)theEObject;
+				T result = caseGameType(gameType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.ACTION2_DETECT: {
+				Action2Detect action2Detect = (Action2Detect)theEObject;
+				T result = caseAction2Detect(action2Detect);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.GAME_TYPE_COMP: {
+				GameTypeComp gameTypeComp = (GameTypeComp)theEObject;
+				T result = caseGameTypeComp(gameTypeComp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.STRUCTURED_TASK: {
+				StructuredTask structuredTask = (StructuredTask)theEObject;
+				T result = caseStructuredTask(structuredTask);
+				if (result == null) result = caseTask(structuredTask);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.TASK: {
+				Task task = (Task)theEObject;
+				T result = caseTask(task);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.SIMPLE_TASK: {
+				SimpleTask simpleTask = (SimpleTask)theEObject;
+				T result = caseSimpleTask(simpleTask);
+				if (result == null) result = caseTask(simpleTask);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.RECURRENT_TASK: {
+				RecurrentTask recurrentTask = (RecurrentTask)theEObject;
+				T result = caseRecurrentTask(recurrentTask);
+				if (result == null) result = caseStructuredTask(recurrentTask);
+				if (result == null) result = caseTask(recurrentTask);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.GAME_TYPES: {
+				GameTypes gameTypes = (GameTypes)theEObject;
+				T result = caseGameTypes(gameTypes);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.ACTIONS2_DETECT: {
+				Actions2Detect actions2Detect = (Actions2Detect)theEObject;
+				T result = caseActions2Detect(actions2Detect);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.TASK_COMP: {
+				TaskComp taskComp = (TaskComp)theEObject;
+				T result = caseTaskComp(taskComp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.CONSTRAINT: {
+				Constraint constraint = (Constraint)theEObject;
+				T result = caseConstraint(constraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.BASIC_SURVEY_EXISTENCE: {
+				BasicSurveyExistence basicSurveyExistence = (BasicSurveyExistence)theEObject;
+				T result = caseBasicSurveyExistence(basicSurveyExistence);
+				if (result == null) result = caseConstraint(basicSurveyExistence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.SIMPLE_SURVEY_EXISTENCE: {
+				SimpleSurveyExistence simpleSurveyExistence = (SimpleSurveyExistence)theEObject;
+				T result = caseSimpleSurveyExistence(simpleSurveyExistence);
+				if (result == null) result = caseConstraint(simpleSurveyExistence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SimuV1Package.RELIABLE_BASIC_SURVEY_EXISTENCE: {
+				ReliableBasicSurveyExistence reliableBasicSurveyExistence = (ReliableBasicSurveyExistence)theEObject;
+				T result = caseReliableBasicSurveyExistence(reliableBasicSurveyExistence);
+				if (result == null) result = caseConstraint(reliableBasicSurveyExistence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,7 +343,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseContext(Context object) {
+	public T caseContext(Context object) {
 		return null;
 	}
 
@@ -284,7 +358,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAppDesc(AppDesc object) {
+	public T caseAppDesc(AppDesc object) {
 		return null;
 	}
 
@@ -299,7 +373,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInventoryObjective(InventoryObjective object) {
+	public T caseInventoryObjective(InventoryObjective object) {
 		return null;
 	}
 
@@ -314,7 +388,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseLearningObjective(LearningObjective object) {
+	public T caseLearningObjective(LearningObjective object) {
 		return null;
 	}
 
@@ -329,7 +403,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseZone(Zone object) {
+	public T caseZone(Zone object) {
 		return null;
 	}
 
@@ -344,7 +418,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseZoneCirculaire(ZoneCirculaire object) {
+	public T caseZoneCirculaire(ZoneCirculaire object) {
 		return null;
 	}
 
@@ -359,7 +433,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseProfile(Profile object) {
+	public T caseProfile(Profile object) {
 		return null;
 	}
 
@@ -374,7 +448,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseData(Data object) {
+	public T caseData(Data object) {
 		return null;
 	}
 
@@ -389,7 +463,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInventoryProfile(InventoryProfile object) {
+	public T caseInventoryProfile(InventoryProfile object) {
 		return null;
 	}
 
@@ -404,7 +478,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBotanicalProfile(BotanicalProfile object) {
+	public T caseBotanicalProfile(BotanicalProfile object) {
 		return null;
 	}
 
@@ -419,7 +493,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseGameProfile(GameProfile object) {
+	public T caseGameProfile(GameProfile object) {
 		return null;
 	}
 
@@ -434,7 +508,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBotanicalSurvey(BotanicalSurvey object) {
+	public T caseBotanicalSurvey(BotanicalSurvey object) {
 		return null;
 	}
 
@@ -449,7 +523,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBasicSurvey(BasicSurvey object) {
+	public T caseBasicSurvey(BasicSurvey object) {
 		return null;
 	}
 
@@ -464,7 +538,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConfirmationSurvey(ConfirmationSurvey object) {
+	public T caseConfirmationSurvey(ConfirmationSurvey object) {
 		return null;
 	}
 
@@ -479,7 +553,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAdditionalSurvey(AdditionalSurvey object) {
+	public T caseAdditionalSurvey(AdditionalSurvey object) {
 		return null;
 	}
 
@@ -494,7 +568,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePOI(POI object) {
+	public T casePOI(POI object) {
 		return null;
 	}
 
@@ -509,7 +583,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseActivity(Activity object) {
+	public T caseActivity(Activity object) {
 		return null;
 	}
 
@@ -524,7 +598,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBotanicalFlore(BotanicalFlore object) {
+	public T caseBotanicalFlore(BotanicalFlore object) {
 		return null;
 	}
 
@@ -539,7 +613,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseObjectives(Objectives object) {
+	public T caseObjectives(Objectives object) {
 		return null;
 	}
 
@@ -554,7 +628,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSpecies(Species object) {
+	public T caseSpecies(Species object) {
 		return null;
 	}
 
@@ -569,7 +643,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseGender(Gender object) {
+	public T caseGender(Gender object) {
 		return null;
 	}
 
@@ -584,7 +658,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseFamily(Family object) {
+	public T caseFamily(Family object) {
 		return null;
 	}
 
@@ -599,7 +673,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseTarget(Target object) {
+	public T caseTarget(Target object) {
 		return null;
 	}
 
@@ -614,7 +688,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseGameObjective(GameObjective object) {
+	public T caseGameObjective(GameObjective object) {
 		return null;
 	}
 
@@ -629,7 +703,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBotanicalStat(BotanicalStat object) {
+	public T caseBotanicalStat(BotanicalStat object) {
 		return null;
 	}
 
@@ -644,7 +718,7 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseGameTypePref(GameTypePref object) {
+	public T caseGameTypePref(GameTypePref object) {
 		return null;
 	}
 
@@ -659,7 +733,217 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseObjective(Objective object) {
+	public T caseObjective(Objective object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Game Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Game Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGameType(GameType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action2 Detect</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action2 Detect</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAction2Detect(Action2Detect object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Game Type Comp</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Game Type Comp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGameTypeComp(GameTypeComp object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Structured Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Structured Task</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStructuredTask(StructuredTask object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Task</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTask(Task object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Task</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpleTask(SimpleTask object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Recurrent Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Recurrent Task</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRecurrentTask(RecurrentTask object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Game Types</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Game Types</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGameTypes(GameTypes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Actions2 Detect</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Actions2 Detect</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActions2Detect(Actions2Detect object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Task Comp</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Task Comp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTaskComp(TaskComp object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstraint(Constraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic Survey Existence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic Survey Existence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasicSurveyExistence(BasicSurveyExistence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Survey Existence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Survey Existence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpleSurveyExistence(SimpleSurveyExistence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reliable Basic Survey Existence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reliable Basic Survey Existence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReliableBasicSurveyExistence(ReliableBasicSurveyExistence object) {
 		return null;
 	}
 
@@ -674,7 +958,8 @@ public class SimuV1Switch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	@Override
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

@@ -34,9 +34,9 @@ public interface BotanicalFlore extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Family</em>' containment reference list.
 	 * @see AppliCitoyenne.simuV1.SimuV1Package#getBotanicalFlore_Family()
-	 * @model type="AppliCitoyenne.simuV1.Family" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getFamily();
+	EList<Family> getFamily();
 
 } // BotanicalFlore

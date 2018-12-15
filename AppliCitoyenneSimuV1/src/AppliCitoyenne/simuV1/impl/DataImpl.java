@@ -44,7 +44,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList profiles;
+	protected EList<Profile> profiles;
 
 	/**
 	 * The cached value of the '{@link #getBotanicalsurveys() <em>Botanicalsurveys</em>}' containment reference list.
@@ -54,7 +54,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList botanicalsurveys;
+	protected EList<BotanicalSurvey> botanicalsurveys;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,6 +70,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.DATA;
 	}
@@ -79,9 +80,9 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getProfiles() {
+	public EList<Profile> getProfiles() {
 		if (profiles == null) {
-			profiles = new EObjectContainmentEList(Profile.class, this, SimuV1Package.DATA__PROFILES);
+			profiles = new EObjectContainmentEList<Profile>(Profile.class, this, SimuV1Package.DATA__PROFILES);
 		}
 		return profiles;
 	}
@@ -91,9 +92,9 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getBotanicalsurveys() {
+	public EList<BotanicalSurvey> getBotanicalsurveys() {
 		if (botanicalsurveys == null) {
-			botanicalsurveys = new EObjectContainmentEList(BotanicalSurvey.class, this, SimuV1Package.DATA__BOTANICALSURVEYS);
+			botanicalsurveys = new EObjectContainmentEList<BotanicalSurvey>(BotanicalSurvey.class, this, SimuV1Package.DATA__BOTANICALSURVEYS);
 		}
 		return botanicalsurveys;
 	}
@@ -103,12 +104,13 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.DATA__PROFILES:
-				return ((InternalEList)getProfiles()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getProfiles()).basicRemove(otherEnd, msgs);
 			case SimuV1Package.DATA__BOTANICALSURVEYS:
-				return ((InternalEList)getBotanicalsurveys()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getBotanicalsurveys()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -118,6 +120,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.DATA__PROFILES:
@@ -133,15 +136,17 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.DATA__PROFILES:
 				getProfiles().clear();
-				getProfiles().addAll((Collection)newValue);
+				getProfiles().addAll((Collection<? extends Profile>)newValue);
 				return;
 			case SimuV1Package.DATA__BOTANICALSURVEYS:
 				getBotanicalsurveys().clear();
-				getBotanicalsurveys().addAll((Collection)newValue);
+				getBotanicalsurveys().addAll((Collection<? extends BotanicalSurvey>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,6 +157,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.DATA__PROFILES:
@@ -169,6 +175,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.DATA__PROFILES:

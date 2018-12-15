@@ -2,21 +2,28 @@
  */
 package AppliCitoyenne.simuV1.impl;
 
+import AppliCitoyenne.simuV1.Action2Detect;
+import AppliCitoyenne.simuV1.Actions2Detect;
 import AppliCitoyenne.simuV1.Activity;
 import AppliCitoyenne.simuV1.AdditionalSurvey;
 import AppliCitoyenne.simuV1.AppDesc;
 import AppliCitoyenne.simuV1.BasicSurvey;
+import AppliCitoyenne.simuV1.BasicSurveyExistence;
 import AppliCitoyenne.simuV1.BotanicalFlore;
 import AppliCitoyenne.simuV1.BotanicalProfile;
 import AppliCitoyenne.simuV1.BotanicalStat;
 import AppliCitoyenne.simuV1.BotanicalSurvey;
 import AppliCitoyenne.simuV1.ConfirmationSurvey;
+import AppliCitoyenne.simuV1.Constraint;
 import AppliCitoyenne.simuV1.Context;
 import AppliCitoyenne.simuV1.Data;
 import AppliCitoyenne.simuV1.Family;
 import AppliCitoyenne.simuV1.GameObjective;
 import AppliCitoyenne.simuV1.GameProfile;
+import AppliCitoyenne.simuV1.GameType;
+import AppliCitoyenne.simuV1.GameTypeComp;
 import AppliCitoyenne.simuV1.GameTypePref;
+import AppliCitoyenne.simuV1.GameTypes;
 import AppliCitoyenne.simuV1.Gender;
 import AppliCitoyenne.simuV1.InventoryObjective;
 import AppliCitoyenne.simuV1.InventoryProfile;
@@ -24,10 +31,17 @@ import AppliCitoyenne.simuV1.LearningObjective;
 import AppliCitoyenne.simuV1.Objective;
 import AppliCitoyenne.simuV1.Objectives;
 import AppliCitoyenne.simuV1.Profile;
+import AppliCitoyenne.simuV1.RecurrentTask;
+import AppliCitoyenne.simuV1.ReliableBasicSurveyExistence;
+import AppliCitoyenne.simuV1.SimpleSurveyExistence;
+import AppliCitoyenne.simuV1.SimpleTask;
 import AppliCitoyenne.simuV1.SimuV1Factory;
 import AppliCitoyenne.simuV1.SimuV1Package;
 import AppliCitoyenne.simuV1.Species;
+import AppliCitoyenne.simuV1.StructuredTask;
 import AppliCitoyenne.simuV1.Target;
+import AppliCitoyenne.simuV1.Task;
+import AppliCitoyenne.simuV1.TaskComp;
 import AppliCitoyenne.simuV1.Zone;
 import AppliCitoyenne.simuV1.ZoneCirculaire;
 
@@ -235,6 +249,104 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	private EClass objectiveEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gameTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass action2DetectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gameTypeCompEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass structuredTaskEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass taskEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass simpleTaskEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass recurrentTaskEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gameTypesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actions2DetectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass taskCompEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass basicSurveyExistenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass simpleSurveyExistenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reliableBasicSurveyExistenceEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -347,6 +459,24 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 */
 	public EReference getAppDesc_Botanicalflore() {
 		return (EReference)appDescEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAppDesc_Gametypes() {
+		return (EReference)appDescEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAppDesc_Actions2detect() {
+		return (EReference)appDescEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -768,6 +898,42 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getActivity_Instruction() {
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActivity_GameZone() {
+		return (EReference)activityEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActivity_Gametypecomp() {
+		return (EReference)activityEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActivity_Gametype() {
+		return (EReference)activityEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBotanicalFlore() {
 		return botanicalFloreEClass;
 	}
@@ -831,15 +997,6 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecies_Name() {
-		return (EAttribute)speciesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getGender() {
 		return genderEClass;
 	}
@@ -849,17 +1006,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGender_Name() {
-		return (EAttribute)genderEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getGender_Species() {
-		return (EReference)genderEClass.getEStructuralFeatures().get(1);
+		return (EReference)genderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -896,6 +1044,15 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 */
 	public EClass getTarget() {
 		return targetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTarget_Name() {
+		return (EAttribute)targetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -975,8 +1132,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getObjective_IncompatibleObjectives() {
-		return (EReference)objectiveEClass.getEStructuralFeatures().get(0);
+	public EAttribute getObjective_Name() {
+		return (EAttribute)objectiveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -984,8 +1141,296 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObjective_Name() {
-		return (EAttribute)objectiveEClass.getEStructuralFeatures().get(1);
+	public EReference getObjective_IncompatibleObjectives() {
+		return (EReference)objectiveEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGameType() {
+		return gameTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGameType_Compatiblegameobjective() {
+		return (EReference)gameTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGameType_Name() {
+		return (EAttribute)gameTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGameType_Compatibleinventoryobjective() {
+		return (EReference)gameTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGameType_Compatiblelearningobjective() {
+		return (EReference)gameTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGameType_Instruction() {
+		return (EAttribute)gameTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGameType_Constraint() {
+		return (EReference)gameTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAction2Detect() {
+		return action2DetectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAction2Detect_Name() {
+		return (EAttribute)action2DetectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAction2Detect_Compatibleinventoryobjective() {
+		return (EReference)action2DetectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAction2Detect_Optionaltarget() {
+		return (EReference)action2DetectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGameTypeComp() {
+		return gameTypeCompEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGameTypeComp_Gametype() {
+		return (EReference)gameTypeCompEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGameTypeComp_Times() {
+		return (EAttribute)gameTypeCompEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStructuredTask() {
+		return structuredTaskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTask() {
+		return taskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTask_Name() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSimpleTask() {
+		return simpleTaskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSimpleTask_Compatibleaction2detect() {
+		return (EReference)simpleTaskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRecurrentTask() {
+		return recurrentTaskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRecurrentTask_Subtask() {
+		return (EReference)recurrentTaskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGameTypes() {
+		return gameTypesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGameTypes_Gametype() {
+		return (EReference)gameTypesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActions2Detect() {
+		return actions2DetectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActions2Detect_Action2detect() {
+		return (EReference)actions2DetectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTaskComp() {
+		return taskCompEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTaskComp_Action2detect() {
+		return (EReference)taskCompEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTaskComp_Newspeciessurvey() {
+		return (EReference)taskCompEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstraint() {
+		return constraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBasicSurveyExistence() {
+		return basicSurveyExistenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSimpleSurveyExistence() {
+		return simpleSurveyExistenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReliableBasicSurveyExistence() {
+		return reliableBasicSurveyExistenceEClass;
 	}
 
 	/**
@@ -1023,6 +1468,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		appDescEClass = createEClass(APP_DESC);
 		createEReference(appDescEClass, APP_DESC__OBJECTIVE);
 		createEReference(appDescEClass, APP_DESC__BOTANICALFLORE);
+		createEReference(appDescEClass, APP_DESC__GAMETYPES);
+		createEReference(appDescEClass, APP_DESC__ACTIONS2DETECT);
 
 		inventoryObjectiveEClass = createEClass(INVENTORY_OBJECTIVE);
 
@@ -1084,6 +1531,10 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(activityEClass, ACTIVITY__LEARNINGOBJECTIVE);
 		createEReference(activityEClass, ACTIVITY__PROFILE);
 		createEReference(activityEClass, ACTIVITY__GAMEOBJECTIVE);
+		createEAttribute(activityEClass, ACTIVITY__INSTRUCTION);
+		createEReference(activityEClass, ACTIVITY__GAME_ZONE);
+		createEReference(activityEClass, ACTIVITY__GAMETYPECOMP);
+		createEReference(activityEClass, ACTIVITY__GAMETYPE);
 
 		botanicalFloreEClass = createEClass(BOTANICAL_FLORE);
 		createEReference(botanicalFloreEClass, BOTANICAL_FLORE__FAMILY);
@@ -1094,10 +1545,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(objectivesEClass, OBJECTIVES__GAMEOBJECTIVE);
 
 		speciesEClass = createEClass(SPECIES);
-		createEAttribute(speciesEClass, SPECIES__NAME);
 
 		genderEClass = createEClass(GENDER);
-		createEAttribute(genderEClass, GENDER__NAME);
 		createEReference(genderEClass, GENDER__SPECIES);
 
 		familyEClass = createEClass(FAMILY);
@@ -1105,6 +1554,7 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(familyEClass, FAMILY__GENDER);
 
 		targetEClass = createEClass(TARGET);
+		createEAttribute(targetEClass, TARGET__NAME);
 
 		gameObjectiveEClass = createEClass(GAME_OBJECTIVE);
 
@@ -1117,8 +1567,54 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		createEReference(gameTypePrefEClass, GAME_TYPE_PREF__GAMEOBJECTIVE);
 
 		objectiveEClass = createEClass(OBJECTIVE);
-		createEReference(objectiveEClass, OBJECTIVE__INCOMPATIBLE_OBJECTIVES);
 		createEAttribute(objectiveEClass, OBJECTIVE__NAME);
+		createEReference(objectiveEClass, OBJECTIVE__INCOMPATIBLE_OBJECTIVES);
+
+		gameTypeEClass = createEClass(GAME_TYPE);
+		createEReference(gameTypeEClass, GAME_TYPE__COMPATIBLEGAMEOBJECTIVE);
+		createEAttribute(gameTypeEClass, GAME_TYPE__NAME);
+		createEReference(gameTypeEClass, GAME_TYPE__COMPATIBLEINVENTORYOBJECTIVE);
+		createEReference(gameTypeEClass, GAME_TYPE__COMPATIBLELEARNINGOBJECTIVE);
+		createEAttribute(gameTypeEClass, GAME_TYPE__INSTRUCTION);
+		createEReference(gameTypeEClass, GAME_TYPE__CONSTRAINT);
+
+		action2DetectEClass = createEClass(ACTION2_DETECT);
+		createEAttribute(action2DetectEClass, ACTION2_DETECT__NAME);
+		createEReference(action2DetectEClass, ACTION2_DETECT__COMPATIBLEINVENTORYOBJECTIVE);
+		createEReference(action2DetectEClass, ACTION2_DETECT__OPTIONALTARGET);
+
+		gameTypeCompEClass = createEClass(GAME_TYPE_COMP);
+		createEReference(gameTypeCompEClass, GAME_TYPE_COMP__GAMETYPE);
+		createEAttribute(gameTypeCompEClass, GAME_TYPE_COMP__TIMES);
+
+		structuredTaskEClass = createEClass(STRUCTURED_TASK);
+
+		taskEClass = createEClass(TASK);
+		createEAttribute(taskEClass, TASK__NAME);
+
+		simpleTaskEClass = createEClass(SIMPLE_TASK);
+		createEReference(simpleTaskEClass, SIMPLE_TASK__COMPATIBLEACTION2DETECT);
+
+		recurrentTaskEClass = createEClass(RECURRENT_TASK);
+		createEReference(recurrentTaskEClass, RECURRENT_TASK__SUBTASK);
+
+		gameTypesEClass = createEClass(GAME_TYPES);
+		createEReference(gameTypesEClass, GAME_TYPES__GAMETYPE);
+
+		actions2DetectEClass = createEClass(ACTIONS2_DETECT);
+		createEReference(actions2DetectEClass, ACTIONS2_DETECT__ACTION2DETECT);
+
+		taskCompEClass = createEClass(TASK_COMP);
+		createEReference(taskCompEClass, TASK_COMP__ACTION2DETECT);
+		createEReference(taskCompEClass, TASK_COMP__NEWSPECIESSURVEY);
+
+		constraintEClass = createEClass(CONSTRAINT);
+
+		basicSurveyExistenceEClass = createEClass(BASIC_SURVEY_EXISTENCE);
+
+		simpleSurveyExistenceEClass = createEClass(SIMPLE_SURVEY_EXISTENCE);
+
+		reliableBasicSurveyExistenceEClass = createEClass(RELIABLE_BASIC_SURVEY_EXISTENCE);
 	}
 
 	/**
@@ -1144,6 +1640,10 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Create type parameters
+
+		// Set bounds for type parameters
+
 		// Add supertypes to classes
 		inventoryObjectiveEClass.getESuperTypes().add(this.getObjective());
 		learningObjectiveEClass.getESuperTypes().add(this.getObjective());
@@ -1154,6 +1654,12 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		speciesEClass.getESuperTypes().add(this.getTarget());
 		genderEClass.getESuperTypes().add(this.getTarget());
 		gameObjectiveEClass.getESuperTypes().add(this.getObjective());
+		structuredTaskEClass.getESuperTypes().add(this.getTask());
+		simpleTaskEClass.getESuperTypes().add(this.getTask());
+		recurrentTaskEClass.getESuperTypes().add(this.getStructuredTask());
+		basicSurveyExistenceEClass.getESuperTypes().add(this.getConstraint());
+		simpleSurveyExistenceEClass.getESuperTypes().add(this.getConstraint());
+		reliableBasicSurveyExistenceEClass.getESuperTypes().add(this.getConstraint());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1163,6 +1669,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEClass(appDescEClass, AppDesc.class, "AppDesc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAppDesc_Objective(), this.getObjectives(), null, "objective", null, 0, 1, AppDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAppDesc_Botanicalflore(), this.getBotanicalFlore(), null, "botanicalflore", null, 0, 1, AppDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppDesc_Gametypes(), this.getGameTypes(), null, "gametypes", null, 0, 1, AppDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAppDesc_Actions2detect(), this.getActions2Detect(), null, "actions2detect", null, 0, 1, AppDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inventoryObjectiveEClass, InventoryObjective.class, "InventoryObjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1224,6 +1732,10 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getActivity_Learningobjective(), this.getLearningObjective(), null, "learningobjective", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Profile(), this.getProfile(), null, "profile", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Gameobjective(), this.getGameObjective(), null, "gameobjective", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivity_Instruction(), ecorePackage.getEString(), "instruction", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivity_GameZone(), this.getZone(), null, "gameZone", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivity_Gametypecomp(), this.getGameTypeComp(), null, "gametypecomp", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivity_Gametype(), this.getGameType(), null, "gametype", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(botanicalFloreEClass, BotanicalFlore.class, "BotanicalFlore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBotanicalFlore_Family(), this.getFamily(), null, "family", null, 0, -1, BotanicalFlore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1234,10 +1746,8 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getObjectives_Gameobjective(), this.getGameObjective(), null, "gameobjective", null, 0, -1, Objectives.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(speciesEClass, Species.class, "Species", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSpecies_Name(), ecorePackage.getEString(), "name", null, 0, 1, Species.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(genderEClass, Gender.class, "Gender", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGender_Name(), ecorePackage.getEString(), "name", null, 0, 1, Gender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGender_Species(), this.getSpecies(), null, "species", null, 0, -1, Gender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(familyEClass, Family.class, "Family", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1245,6 +1755,7 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getFamily_Gender(), this.getGender(), null, "gender", null, 0, -1, Family.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(targetEClass, Target.class, "Target", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTarget_Name(), ecorePackage.getEString(), "name", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gameObjectiveEClass, GameObjective.class, "GameObjective", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1257,8 +1768,54 @@ public class SimuV1PackageImpl extends EPackageImpl implements SimuV1Package {
 		initEReference(getGameTypePref_Gameobjective(), this.getGameObjective(), null, "gameobjective", null, 0, 1, GameTypePref.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objectiveEClass, Objective.class, "Objective", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getObjective_IncompatibleObjectives(), this.getObjective(), null, "incompatibleObjectives", null, 0, -1, Objective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjective_Name(), ecorePackage.getEString(), "name", null, 0, 1, Objective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getObjective_IncompatibleObjectives(), this.getObjective(), null, "incompatibleObjectives", null, 0, -1, Objective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(gameTypeEClass, GameType.class, "GameType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGameType_Compatiblegameobjective(), this.getGameObjective(), null, "compatiblegameobjective", null, 0, -1, GameType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGameType_Name(), ecorePackage.getEString(), "name", null, 0, 1, GameType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGameType_Compatibleinventoryobjective(), this.getInventoryObjective(), null, "compatibleinventoryobjective", null, 0, -1, GameType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGameType_Compatiblelearningobjective(), this.getLearningObjective(), null, "compatiblelearningobjective", null, 0, -1, GameType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGameType_Instruction(), ecorePackage.getEString(), "instruction", null, 0, 1, GameType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGameType_Constraint(), this.getConstraint(), null, "constraint", null, 0, -1, GameType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(action2DetectEClass, Action2Detect.class, "Action2Detect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAction2Detect_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action2Detect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction2Detect_Compatibleinventoryobjective(), this.getInventoryObjective(), null, "compatibleinventoryobjective", null, 0, -1, Action2Detect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction2Detect_Optionaltarget(), this.getTarget(), null, "optionaltarget", null, 0, -1, Action2Detect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(gameTypeCompEClass, GameTypeComp.class, "GameTypeComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGameTypeComp_Gametype(), this.getGameType(), null, "gametype", null, 0, 1, GameTypeComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGameTypeComp_Times(), ecorePackage.getEInt(), "times", null, 0, 1, GameTypeComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(structuredTaskEClass, StructuredTask.class, "StructuredTask", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(taskEClass, Task.class, "Task", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(simpleTaskEClass, SimpleTask.class, "SimpleTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSimpleTask_Compatibleaction2detect(), this.getAction2Detect(), null, "compatibleaction2detect", null, 0, -1, SimpleTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(recurrentTaskEClass, RecurrentTask.class, "RecurrentTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRecurrentTask_Subtask(), this.getSimpleTask(), null, "subtask", null, 0, 1, RecurrentTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(gameTypesEClass, GameTypes.class, "GameTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGameTypes_Gametype(), this.getGameType(), null, "gametype", null, 0, -1, GameTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actions2DetectEClass, Actions2Detect.class, "Actions2Detect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActions2Detect_Action2detect(), this.getAction2Detect(), null, "action2detect", null, 0, -1, Actions2Detect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(taskCompEClass, TaskComp.class, "TaskComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTaskComp_Action2detect(), this.getAction2Detect(), null, "action2detect", null, 0, 1, TaskComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTaskComp_Newspeciessurvey(), this.getTarget(), null, "newspeciessurvey", null, 0, 1, TaskComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(basicSurveyExistenceEClass, BasicSurveyExistence.class, "BasicSurveyExistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(simpleSurveyExistenceEClass, SimpleSurveyExistence.class, "SimpleSurveyExistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(reliableBasicSurveyExistenceEClass, ReliableBasicSurveyExistence.class, "ReliableBasicSurveyExistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

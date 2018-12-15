@@ -4,6 +4,7 @@ package AppliCitoyenne.simuV1.impl;
 
 import AppliCitoyenne.simuV1.LearningObjective;
 import AppliCitoyenne.simuV1.SimuV1Package;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -28,6 +29,7 @@ public class LearningObjectiveImpl extends ObjectiveImpl implements LearningObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.LEARNING_OBJECTIVE;
 	}

@@ -229,6 +229,105 @@ public interface SimuV1Factory extends EFactory {
 	GameTypePref createGameTypePref();
 
 	/**
+	 * Returns a new object of class '<em>Game Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Game Type</em>'.
+	 * @generated
+	 */
+	GameType createGameType();
+
+	/**
+	 * Returns a new object of class '<em>Action2 Detect</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action2 Detect</em>'.
+	 * @generated
+	 */
+	Action2Detect createAction2Detect();
+
+	/**
+	 * Returns a new object of class '<em>Game Type Comp</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Game Type Comp</em>'.
+	 * @generated
+	 */
+	GameTypeComp createGameTypeComp();
+
+	/**
+	 * Returns a new object of class '<em>Simple Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Task</em>'.
+	 * @generated
+	 */
+	SimpleTask createSimpleTask();
+
+	/**
+	 * Returns a new object of class '<em>Recurrent Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Recurrent Task</em>'.
+	 * @generated
+	 */
+	RecurrentTask createRecurrentTask();
+
+	/**
+	 * Returns a new object of class '<em>Game Types</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Game Types</em>'.
+	 * @generated
+	 */
+	GameTypes createGameTypes();
+
+	/**
+	 * Returns a new object of class '<em>Actions2 Detect</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actions2 Detect</em>'.
+	 * @generated
+	 */
+	Actions2Detect createActions2Detect();
+
+	/**
+	 * Returns a new object of class '<em>Task Comp</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Task Comp</em>'.
+	 * @generated
+	 */
+	TaskComp createTaskComp();
+
+	/**
+	 * Returns a new object of class '<em>Basic Survey Existence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Basic Survey Existence</em>'.
+	 * @generated
+	 */
+	BasicSurveyExistence createBasicSurveyExistence();
+
+	/**
+	 * Returns a new object of class '<em>Simple Survey Existence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Survey Existence</em>'.
+	 * @generated
+	 */
+	SimpleSurveyExistence createSimpleSurveyExistence();
+
+	/**
+	 * Returns a new object of class '<em>Reliable Basic Survey Existence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reliable Basic Survey Existence</em>'.
+	 * @generated
+	 */
+	ReliableBasicSurveyExistence createReliableBasicSurveyExistence();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -45,7 +45,7 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected EList botanicalstat;
+	protected EList<BotanicalStat> botanicalstat;
 
 	/**
 	 * The default value of the '{@link #isNoInterest() <em>No Interest</em>}' attribute.
@@ -81,6 +81,7 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.BOTANICAL_PROFILE;
 	}
@@ -90,9 +91,9 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getBotanicalstat() {
+	public EList<BotanicalStat> getBotanicalstat() {
 		if (botanicalstat == null) {
-			botanicalstat = new EObjectContainmentEList(BotanicalStat.class, this, SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT);
+			botanicalstat = new EObjectContainmentEList<BotanicalStat>(BotanicalStat.class, this, SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT);
 		}
 		return botanicalstat;
 	}
@@ -123,10 +124,11 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT:
-				return ((InternalEList)getBotanicalstat()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getBotanicalstat()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,12 +138,13 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT:
 				return getBotanicalstat();
 			case SimuV1Package.BOTANICAL_PROFILE__NO_INTEREST:
-				return isNoInterest() ? Boolean.TRUE : Boolean.FALSE;
+				return isNoInterest();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,14 +154,16 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT:
 				getBotanicalstat().clear();
-				getBotanicalstat().addAll((Collection)newValue);
+				getBotanicalstat().addAll((Collection<? extends BotanicalStat>)newValue);
 				return;
 			case SimuV1Package.BOTANICAL_PROFILE__NO_INTEREST:
-				setNoInterest(((Boolean)newValue).booleanValue());
+				setNoInterest((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,6 +174,7 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT:
@@ -186,6 +192,7 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_PROFILE__BOTANICALSTAT:
@@ -201,6 +208,7 @@ public class BotanicalProfileImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

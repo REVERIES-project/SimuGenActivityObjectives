@@ -18,7 +18,7 @@ import AppliCitoyenne.simuV1.*;
 
 public class Generator {
 
-	private static final int NB_GENERATIONS = 1000;
+	private static final int NB_GENERATIONS = 1;
 
 	private ResourceSet resSet;
 
@@ -29,6 +29,7 @@ public class Generator {
 	private Activity generatedActivity;
 
 	private Util util;
+	private UtilStructural utilStruct;
 
 	public static void main(String[] args) {
 		new Generator().start();
@@ -41,11 +42,41 @@ public class Generator {
 
 		generateSeveralObjectiveScenario(NB_GENERATIONS);
 
-		// displayObjectiveScenario();
+		displayObjectiveScenario();
+		
+		generateStructuralScenario(generatedActivity);
+		
+		displayStructuralScenario();
 
+		displayTripletsWithoutActivityType();
+		
 		// TODO : other perspectives
 
 		save("Activity_gen");
+	}  
+
+	private void displayTripletsWithoutActivityType() {
+		MyLogger.displayHeader("Triplet Coverage with activity Types");
+		
+		for (GameObjective go : appDescRoot.getObjective().getGameobjective()) {
+			for (InventoryObjective io : appDescRoot.getObjective().getInventoryobjective()) {
+				for (LearningObjective lo : appDescRoot.getObjective().getLearningobjective()) {
+					
+					MyLogger.display("( " + go.getName() + " , " + io.getName() + " , " + lo.getName() + " ) ");
+					
+					int cpt = 0;
+					//System.out.println(generatedActivity.getGameobjective());
+					for (GameType gt : appDescRoot.getGametypes().getGametype()) {
+						if ( gt.getCompatiblegameobjective().contains(go) 
+								&& gt.getCompatibleinventoryobjective().contains(io)
+								&& gt.getCompatiblelearningobjective().contains(lo)) {
+							cpt++;
+						}
+					}
+					MyLogger.displayln(" => [" + cpt + "]");
+				}
+			}
+		}
 	}
 
 	private void init(String dataFic, String appDataFic, String contextFic) {
@@ -65,6 +96,7 @@ public class Generator {
 		EcoreUtil.resolveAll(resSet);
 
 		util = new Util(dataRoot, contextRoot, appDescRoot);
+		utilStruct = new UtilStructural(dataRoot, contextRoot, appDescRoot, util);
 	}
 
 	private Context loadContext(String contextFic) {
@@ -108,6 +140,23 @@ public class Generator {
 		MyLogger.displayln(generatedActivity.getGameobjective().getName());
 
 	}
+	
+	private void displayStructuralScenario() {
+		MyLogger.displayHeader("Structure for the generated activity");
+		MyLogger.display("Game type = ");
+		GameType gt = generatedActivity.getGametype();
+		if (gt == null) {
+			MyLogger.displayln(" pas de type d'activité trouvé");
+		} else {
+			MyLogger.displayln(gt.getName());
+			//if (generatedActivity.getGametypecomp().getTaskcomp().get(0) != null) {
+				
+			//	MyLogger.display("Action = " + ((TaskComp)(generatedActivity.getGametypecomp().getTaskcomp().get(0))).getAction2detect().getName());
+			//}
+		}
+		// TODO : complete
+
+	}
 
 	private void displayContext() {
 		MyLogger.displayHeader("Context");
@@ -124,6 +173,7 @@ public class Generator {
 		m.put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.createResource(URI.createURI(fic + ".simuv1"));
+		MyLogger.displayln("");
 		MyLogger.displayHeader("Backup");
 		MyLogger.display("Save...");
 		resource.getContents().add(generatedActivity);
@@ -172,6 +222,37 @@ public class Generator {
 		MyLogger.displayln("\n\nFound combinations:");
 		analyzer.displayResultTriplet();
 		MyLogger.displayln("\n\n");
+		
+	}
+	
+	private void generateStructuralScenario(Activity activity) {
+		
+		utilStruct.filterGameTypes(activity);
+		
+		utilStruct.ponderateGameTypes();
+
+		utilStruct.selectOneGameType();
+		
+		//GameTypeComp gtc = SimuV1Factory.eINSTANCE.createGameTypeComp();
+		//gtc.setGametype(utilStruct.getChosenGameType());
+		//generatedActivity.setGametypecomp(gtc);
+		
+		generatedActivity.setGametype(utilStruct.getChosenGameType());
+		
+	/*	if (gtc.getGametype() != null) {
+		
+			utilStruct.filterAction2Detect(activity);
+			utilStruct.ponderateAction2Detect();
+			Action2Detect action = utilStruct.selectOneAction2Detect();
+			
+			TaskComp tc = SimuV1Factory.eINSTANCE.createTaskComp();
+			if (action != null) {
+				tc.setAction2detect(action);
+				gtc.getTaskcomp().add(tc);
+			}
+		}
+		*/
+		
 		
 	}
 }

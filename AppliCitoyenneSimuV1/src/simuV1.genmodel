@@ -2,7 +2,8 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/AppliCitoyenneSimuV1/src" modelPluginID="AppliCitoyenneSimuV1"
     modelName="SimuV1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" copyrightFields="false" importOrganizing="true">
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    importOrganizing="true">
   <foreignModel>simuV1.ecore</foreignModel>
   <genPackages prefix="SimuV1" basePackage="AppliCitoyenne" disposableProviderFactory="true"
       ecorePackage="simuV1.ecore#/">
@@ -13,6 +14,8 @@
     <genClasses ecoreClass="simuV1.ecore#//AppDesc">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/objective"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/botanicalflore"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/gametypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//AppDesc/actions2detect"/>
     </genClasses>
     <genClasses ecoreClass="simuV1.ecore#//InventoryObjective"/>
     <genClasses ecoreClass="simuV1.ecore#//LearningObjective"/>
@@ -70,6 +73,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/learningobjective"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/profile"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/gameobjective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Activity/instruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/gameZone"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/gametypecomp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Activity/gametype"/>
     </genClasses>
     <genClasses ecoreClass="simuV1.ecore#//BotanicalFlore">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//BotanicalFlore/family"/>
@@ -79,18 +86,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objectives/inventoryobjective"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objectives/gameobjective"/>
     </genClasses>
-    <genClasses ecoreClass="simuV1.ecore#//Species">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Species/name"/>
-    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Species"/>
     <genClasses ecoreClass="simuV1.ecore#//Gender">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Gender/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Gender/species"/>
     </genClasses>
     <genClasses ecoreClass="simuV1.ecore#//Family">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Family/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Family/gender"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="simuV1.ecore#//Target"/>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//Target">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Target/name"/>
+    </genClasses>
     <genClasses ecoreClass="simuV1.ecore#//GameObjective"/>
     <genClasses ecoreClass="simuV1.ecore#//BotanicalStat">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//BotanicalStat/directIdentification"/>
@@ -101,8 +107,49 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameTypePref/gameobjective"/>
     </genClasses>
     <genClasses image="false" ecoreClass="simuV1.ecore#//Objective">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objective/incompatibleObjectives"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Objective/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Objective/incompatibleObjectives"/>
     </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//GameType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameType/compatiblegameobjective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameType/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameType/compatibleinventoryobjective"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameType/compatiblelearningobjective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameType/instruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameType/constraint"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Action2Detect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Action2Detect/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Action2Detect/compatibleinventoryobjective"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//Action2Detect/optionaltarget"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//GameTypeComp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameTypeComp/gametype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//GameTypeComp/times"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//StructuredTask"/>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simuV1.ecore#//Task/name"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//SimpleTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//SimpleTask/compatibleaction2detect"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//RecurrentTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//RecurrentTask/subtask"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//GameTypes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//GameTypes/gametype"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//Actions2Detect">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simuV1.ecore#//Actions2Detect/action2detect"/>
+    </genClasses>
+    <genClasses ecoreClass="simuV1.ecore#//TaskComp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//TaskComp/action2detect"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simuV1.ecore#//TaskComp/newspeciessurvey"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="simuV1.ecore#//Constraint"/>
+    <genClasses ecoreClass="simuV1.ecore#//BasicSurveyExistence"/>
+    <genClasses ecoreClass="simuV1.ecore#//SimpleSurveyExistence"/>
+    <genClasses ecoreClass="simuV1.ecore#//ReliableBasicSurveyExistence"/>
   </genPackages>
 </genmodel:GenModel>

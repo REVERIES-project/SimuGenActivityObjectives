@@ -26,23 +26,13 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link AppliCitoyenne.simuV1.impl.ObjectiveImpl#getIncompatibleObjectives <em>Incompatible Objectives</em>}</li>
  *   <li>{@link AppliCitoyenne.simuV1.impl.ObjectiveImpl#getName <em>Name</em>}</li>
+ *   <li>{@link AppliCitoyenne.simuV1.impl.ObjectiveImpl#getIncompatibleObjectives <em>Incompatible Objectives</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container implements Objective {
-	/**
-	 * The cached value of the '{@link #getIncompatibleObjectives() <em>Incompatible Objectives</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncompatibleObjectives()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList incompatibleObjectives;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +54,16 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getIncompatibleObjectives() <em>Incompatible Objectives</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncompatibleObjectives()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Objective> incompatibleObjectives;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -77,20 +77,9 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.OBJECTIVE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList getIncompatibleObjectives() {
-		if (incompatibleObjectives == null) {
-			incompatibleObjectives = new EObjectResolvingEList(Objective.class, this, SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES);
-		}
-		return incompatibleObjectives;
 	}
 
 	/**
@@ -119,12 +108,25 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Objective> getIncompatibleObjectives() {
+		if (incompatibleObjectives == null) {
+			incompatibleObjectives = new EObjectResolvingEList<Objective>(Objective.class, this, SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES);
+		}
+		return incompatibleObjectives;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
-				return getIncompatibleObjectives();
 			case SimuV1Package.OBJECTIVE__NAME:
 				return getName();
+			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
+				return getIncompatibleObjectives();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -134,14 +136,16 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
-				getIncompatibleObjectives().clear();
-				getIncompatibleObjectives().addAll((Collection)newValue);
-				return;
 			case SimuV1Package.OBJECTIVE__NAME:
 				setName((String)newValue);
+				return;
+			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
+				getIncompatibleObjectives().clear();
+				getIncompatibleObjectives().addAll((Collection<? extends Objective>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,13 +156,14 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
-				getIncompatibleObjectives().clear();
-				return;
 			case SimuV1Package.OBJECTIVE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
+				getIncompatibleObjectives().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -169,12 +174,13 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
-				return incompatibleObjectives != null && !incompatibleObjectives.isEmpty();
 			case SimuV1Package.OBJECTIVE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SimuV1Package.OBJECTIVE__INCOMPATIBLE_OBJECTIVES:
+				return incompatibleObjectives != null && !incompatibleObjectives.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -184,6 +190,7 @@ public abstract class ObjectiveImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

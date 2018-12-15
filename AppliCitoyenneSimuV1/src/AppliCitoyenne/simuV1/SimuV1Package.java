@@ -121,13 +121,31 @@ public interface SimuV1Package extends EPackage {
 	int APP_DESC__BOTANICALFLORE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Gametypes</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_DESC__GAMETYPES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Actions2detect</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APP_DESC__ACTIONS2DETECT = 3;
+
+	/**
 	 * The number of structural features of the '<em>App Desc</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APP_DESC_FEATURE_COUNT = 2;
+	int APP_DESC_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.ObjectiveImpl <em>Objective</em>}' class.
@@ -140,22 +158,22 @@ public interface SimuV1Package extends EPackage {
 	int OBJECTIVE = 26;
 
 	/**
-	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECTIVE__INCOMPATIBLE_OBJECTIVES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECTIVE__NAME = 1;
+	int OBJECTIVE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECTIVE__INCOMPATIBLE_OBJECTIVES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Objective</em>' class.
@@ -177,15 +195,6 @@ public interface SimuV1Package extends EPackage {
 	int INVENTORY_OBJECTIVE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INVENTORY_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,6 +202,15 @@ public interface SimuV1Package extends EPackage {
 	 * @ordered
 	 */
 	int INVENTORY_OBJECTIVE__NAME = OBJECTIVE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVENTORY_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
 
 	/**
 	 * The number of structural features of the '<em>Inventory Objective</em>' class.
@@ -214,15 +232,6 @@ public interface SimuV1Package extends EPackage {
 	int LEARNING_OBJECTIVE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LEARNING_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,6 +239,15 @@ public interface SimuV1Package extends EPackage {
 	 * @ordered
 	 */
 	int LEARNING_OBJECTIVE__NAME = OBJECTIVE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEARNING_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
 
 	/**
 	 * The number of structural features of the '<em>Learning Objective</em>' class.
@@ -920,13 +938,49 @@ public interface SimuV1Package extends EPackage {
 	int ACTIVITY__GAMEOBJECTIVE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Instruction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__INSTRUCTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Game Zone</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__GAME_ZONE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Gametypecomp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__GAMETYPECOMP = 6;
+
+	/**
+	 * The feature id for the '<em><b>Gametype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__GAMETYPE = 7;
+
+	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = 4;
+	int ACTIVITY_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.BotanicalFloreImpl <em>Botanical Flore</em>}' class.
@@ -1013,13 +1067,22 @@ public interface SimuV1Package extends EPackage {
 	int TARGET = 22;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET__NAME = 0;
+
+	/**
 	 * The number of structural features of the '<em>Target</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_FEATURE_COUNT = 0;
+	int TARGET_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.SpeciesImpl <em>Species</em>}' class.
@@ -1038,7 +1101,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIES__NAME = TARGET_FEATURE_COUNT + 0;
+	int SPECIES__NAME = TARGET__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Species</em>' class.
@@ -1047,7 +1110,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIES_FEATURE_COUNT = TARGET_FEATURE_COUNT + 1;
+	int SPECIES_FEATURE_COUNT = TARGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GenderImpl <em>Gender</em>}' class.
@@ -1066,7 +1129,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GENDER__NAME = TARGET_FEATURE_COUNT + 0;
+	int GENDER__NAME = TARGET__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Species</b></em>' containment reference list.
@@ -1075,7 +1138,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GENDER__SPECIES = TARGET_FEATURE_COUNT + 1;
+	int GENDER__SPECIES = TARGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Gender</em>' class.
@@ -1084,7 +1147,7 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GENDER_FEATURE_COUNT = TARGET_FEATURE_COUNT + 2;
+	int GENDER_FEATURE_COUNT = TARGET_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.FamilyImpl <em>Family</em>}' class.
@@ -1134,15 +1197,6 @@ public interface SimuV1Package extends EPackage {
 	int GAME_OBJECTIVE = 23;
 
 	/**
-	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GAME_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1150,6 +1204,15 @@ public interface SimuV1Package extends EPackage {
 	 * @ordered
 	 */
 	int GAME_OBJECTIVE__NAME = OBJECTIVE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incompatible Objectives</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_OBJECTIVE__INCOMPATIBLE_OBJECTIVES = OBJECTIVE__INCOMPATIBLE_OBJECTIVES;
 
 	/**
 	 * The number of structural features of the '<em>Game Objective</em>' class.
@@ -1234,6 +1297,462 @@ public interface SimuV1Package extends EPackage {
 	 */
 	int GAME_TYPE_PREF_FEATURE_COUNT = 2;
 
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GameTypeImpl <em>Game Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.GameTypeImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameType()
+	 * @generated
+	 */
+	int GAME_TYPE = 27;
+
+	/**
+	 * The feature id for the '<em><b>Compatiblegameobjective</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE__COMPATIBLEGAMEOBJECTIVE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Compatibleinventoryobjective</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE__COMPATIBLEINVENTORYOBJECTIVE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Compatiblelearningobjective</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE__COMPATIBLELEARNINGOBJECTIVE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Instruction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE__INSTRUCTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE__CONSTRAINT = 5;
+
+	/**
+	 * The number of structural features of the '<em>Game Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.Action2DetectImpl <em>Action2 Detect</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.Action2DetectImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getAction2Detect()
+	 * @generated
+	 */
+	int ACTION2_DETECT = 28;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION2_DETECT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Compatibleinventoryobjective</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION2_DETECT__COMPATIBLEINVENTORYOBJECTIVE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Optionaltarget</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION2_DETECT__OPTIONALTARGET = 2;
+
+	/**
+	 * The number of structural features of the '<em>Action2 Detect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION2_DETECT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GameTypeCompImpl <em>Game Type Comp</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.GameTypeCompImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameTypeComp()
+	 * @generated
+	 */
+	int GAME_TYPE_COMP = 29;
+
+	/**
+	 * The feature id for the '<em><b>Gametype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE_COMP__GAMETYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Times</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE_COMP__TIMES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Game Type Comp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPE_COMP_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.TaskImpl <em>Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.TaskImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getTask()
+	 * @generated
+	 */
+	int TASK = 31;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Task</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.StructuredTaskImpl <em>Structured Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.StructuredTaskImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getStructuredTask()
+	 * @generated
+	 */
+	int STRUCTURED_TASK = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_TASK__NAME = TASK__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Structured Task</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.SimpleTaskImpl <em>Simple Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.SimpleTaskImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getSimpleTask()
+	 * @generated
+	 */
+	int SIMPLE_TASK = 32;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_TASK__NAME = TASK__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Compatibleaction2detect</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_TASK__COMPATIBLEACTION2DETECT = TASK_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Simple Task</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.RecurrentTaskImpl <em>Recurrent Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.RecurrentTaskImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getRecurrentTask()
+	 * @generated
+	 */
+	int RECURRENT_TASK = 33;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRENT_TASK__NAME = STRUCTURED_TASK__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subtask</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRENT_TASK__SUBTASK = STRUCTURED_TASK_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Recurrent Task</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRENT_TASK_FEATURE_COUNT = STRUCTURED_TASK_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.GameTypesImpl <em>Game Types</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.GameTypesImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameTypes()
+	 * @generated
+	 */
+	int GAME_TYPES = 34;
+
+	/**
+	 * The feature id for the '<em><b>Gametype</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPES__GAMETYPE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Game Types</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GAME_TYPES_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.Actions2DetectImpl <em>Actions2 Detect</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.Actions2DetectImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getActions2Detect()
+	 * @generated
+	 */
+	int ACTIONS2_DETECT = 35;
+
+	/**
+	 * The feature id for the '<em><b>Action2detect</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIONS2_DETECT__ACTION2DETECT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Actions2 Detect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIONS2_DETECT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.TaskCompImpl <em>Task Comp</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.TaskCompImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getTaskComp()
+	 * @generated
+	 */
+	int TASK_COMP = 36;
+
+	/**
+	 * The feature id for the '<em><b>Action2detect</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_COMP__ACTION2DETECT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Newspeciessurvey</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_COMP__NEWSPECIESSURVEY = 1;
+
+	/**
+	 * The number of structural features of the '<em>Task Comp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_COMP_FEATURE_COUNT = 2;
+
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.ConstraintImpl <em>Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.ConstraintImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getConstraint()
+	 * @generated
+	 */
+	int CONSTRAINT = 37;
+
+	/**
+	 * The number of structural features of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.BasicSurveyExistenceImpl <em>Basic Survey Existence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.BasicSurveyExistenceImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getBasicSurveyExistence()
+	 * @generated
+	 */
+	int BASIC_SURVEY_EXISTENCE = 38;
+
+	/**
+	 * The number of structural features of the '<em>Basic Survey Existence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_SURVEY_EXISTENCE_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.SimpleSurveyExistenceImpl <em>Simple Survey Existence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.SimpleSurveyExistenceImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getSimpleSurveyExistence()
+	 * @generated
+	 */
+	int SIMPLE_SURVEY_EXISTENCE = 39;
+
+	/**
+	 * The number of structural features of the '<em>Simple Survey Existence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_SURVEY_EXISTENCE_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link AppliCitoyenne.simuV1.impl.ReliableBasicSurveyExistenceImpl <em>Reliable Basic Survey Existence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see AppliCitoyenne.simuV1.impl.ReliableBasicSurveyExistenceImpl
+	 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getReliableBasicSurveyExistence()
+	 * @generated
+	 */
+	int RELIABLE_BASIC_SURVEY_EXISTENCE = 40;
+
+	/**
+	 * The number of structural features of the '<em>Reliable Basic Survey Existence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELIABLE_BASIC_SURVEY_EXISTENCE_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Context <em>Context</em>}'.
@@ -1298,6 +1817,28 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EReference getAppDesc_Botanicalflore();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link AppliCitoyenne.simuV1.AppDesc#getGametypes <em>Gametypes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Gametypes</em>'.
+	 * @see AppliCitoyenne.simuV1.AppDesc#getGametypes()
+	 * @see #getAppDesc()
+	 * @generated
+	 */
+	EReference getAppDesc_Gametypes();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link AppliCitoyenne.simuV1.AppDesc#getActions2detect <em>Actions2detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Actions2detect</em>'.
+	 * @see AppliCitoyenne.simuV1.AppDesc#getActions2detect()
+	 * @see #getAppDesc()
+	 * @generated
+	 */
+	EReference getAppDesc_Actions2detect();
 
 	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.InventoryObjective <em>Inventory Objective</em>}'.
@@ -1791,6 +2332,50 @@ public interface SimuV1Package extends EPackage {
 	EReference getActivity_Gameobjective();
 
 	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Activity#getInstruction <em>Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Instruction</em>'.
+	 * @see AppliCitoyenne.simuV1.Activity#getInstruction()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EAttribute getActivity_Instruction();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link AppliCitoyenne.simuV1.Activity#getGameZone <em>Game Zone</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Game Zone</em>'.
+	 * @see AppliCitoyenne.simuV1.Activity#getGameZone()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EReference getActivity_GameZone();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link AppliCitoyenne.simuV1.Activity#getGametypecomp <em>Gametypecomp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Gametypecomp</em>'.
+	 * @see AppliCitoyenne.simuV1.Activity#getGametypecomp()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EReference getActivity_Gametypecomp();
+
+	/**
+	 * Returns the meta object for the reference '{@link AppliCitoyenne.simuV1.Activity#getGametype <em>Gametype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Gametype</em>'.
+	 * @see AppliCitoyenne.simuV1.Activity#getGametype()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EReference getActivity_Gametype();
+
+	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.BotanicalFlore <em>Botanical Flore</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1865,17 +2450,6 @@ public interface SimuV1Package extends EPackage {
 	EClass getSpecies();
 
 	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Species#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see AppliCitoyenne.simuV1.Species#getName()
-	 * @see #getSpecies()
-	 * @generated
-	 */
-	EAttribute getSpecies_Name();
-
-	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Gender <em>Gender</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1884,17 +2458,6 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EClass getGender();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Gender#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see AppliCitoyenne.simuV1.Gender#getName()
-	 * @see #getGender()
-	 * @generated
-	 */
-	EAttribute getGender_Name();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.Gender#getSpecies <em>Species</em>}'.
@@ -1948,6 +2511,17 @@ public interface SimuV1Package extends EPackage {
 	 * @generated
 	 */
 	EClass getTarget();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Target#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see AppliCitoyenne.simuV1.Target#getName()
+	 * @see #getTarget()
+	 * @generated
+	 */
+	EAttribute getTarget_Name();
 
 	/**
 	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.GameObjective <em>Game Objective</em>}'.
@@ -2034,6 +2608,17 @@ public interface SimuV1Package extends EPackage {
 	EClass getObjective();
 
 	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Objective#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see AppliCitoyenne.simuV1.Objective#getName()
+	 * @see #getObjective()
+	 * @generated
+	 */
+	EAttribute getObjective_Name();
+
+	/**
 	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.Objective#getIncompatibleObjectives <em>Incompatible Objectives</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2045,15 +2630,342 @@ public interface SimuV1Package extends EPackage {
 	EReference getObjective_IncompatibleObjectives();
 
 	/**
-	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Objective#getName <em>Name</em>}'.
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.GameType <em>Game Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Game Type</em>'.
+	 * @see AppliCitoyenne.simuV1.GameType
+	 * @generated
+	 */
+	EClass getGameType();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.GameType#getCompatiblegameobjective <em>Compatiblegameobjective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Compatiblegameobjective</em>'.
+	 * @see AppliCitoyenne.simuV1.GameType#getCompatiblegameobjective()
+	 * @see #getGameType()
+	 * @generated
+	 */
+	EReference getGameType_Compatiblegameobjective();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.GameType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see AppliCitoyenne.simuV1.Objective#getName()
-	 * @see #getObjective()
+	 * @see AppliCitoyenne.simuV1.GameType#getName()
+	 * @see #getGameType()
 	 * @generated
 	 */
-	EAttribute getObjective_Name();
+	EAttribute getGameType_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.GameType#getCompatibleinventoryobjective <em>Compatibleinventoryobjective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Compatibleinventoryobjective</em>'.
+	 * @see AppliCitoyenne.simuV1.GameType#getCompatibleinventoryobjective()
+	 * @see #getGameType()
+	 * @generated
+	 */
+	EReference getGameType_Compatibleinventoryobjective();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.GameType#getCompatiblelearningobjective <em>Compatiblelearningobjective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Compatiblelearningobjective</em>'.
+	 * @see AppliCitoyenne.simuV1.GameType#getCompatiblelearningobjective()
+	 * @see #getGameType()
+	 * @generated
+	 */
+	EReference getGameType_Compatiblelearningobjective();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.GameType#getInstruction <em>Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Instruction</em>'.
+	 * @see AppliCitoyenne.simuV1.GameType#getInstruction()
+	 * @see #getGameType()
+	 * @generated
+	 */
+	EAttribute getGameType_Instruction();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.GameType#getConstraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
+	 * @see AppliCitoyenne.simuV1.GameType#getConstraint()
+	 * @see #getGameType()
+	 * @generated
+	 */
+	EReference getGameType_Constraint();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Action2Detect <em>Action2 Detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action2 Detect</em>'.
+	 * @see AppliCitoyenne.simuV1.Action2Detect
+	 * @generated
+	 */
+	EClass getAction2Detect();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Action2Detect#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see AppliCitoyenne.simuV1.Action2Detect#getName()
+	 * @see #getAction2Detect()
+	 * @generated
+	 */
+	EAttribute getAction2Detect_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.Action2Detect#getCompatibleinventoryobjective <em>Compatibleinventoryobjective</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Compatibleinventoryobjective</em>'.
+	 * @see AppliCitoyenne.simuV1.Action2Detect#getCompatibleinventoryobjective()
+	 * @see #getAction2Detect()
+	 * @generated
+	 */
+	EReference getAction2Detect_Compatibleinventoryobjective();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.Action2Detect#getOptionaltarget <em>Optionaltarget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Optionaltarget</em>'.
+	 * @see AppliCitoyenne.simuV1.Action2Detect#getOptionaltarget()
+	 * @see #getAction2Detect()
+	 * @generated
+	 */
+	EReference getAction2Detect_Optionaltarget();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.GameTypeComp <em>Game Type Comp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Game Type Comp</em>'.
+	 * @see AppliCitoyenne.simuV1.GameTypeComp
+	 * @generated
+	 */
+	EClass getGameTypeComp();
+
+	/**
+	 * Returns the meta object for the reference '{@link AppliCitoyenne.simuV1.GameTypeComp#getGametype <em>Gametype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Gametype</em>'.
+	 * @see AppliCitoyenne.simuV1.GameTypeComp#getGametype()
+	 * @see #getGameTypeComp()
+	 * @generated
+	 */
+	EReference getGameTypeComp_Gametype();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.GameTypeComp#getTimes <em>Times</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Times</em>'.
+	 * @see AppliCitoyenne.simuV1.GameTypeComp#getTimes()
+	 * @see #getGameTypeComp()
+	 * @generated
+	 */
+	EAttribute getGameTypeComp_Times();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.StructuredTask <em>Structured Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Structured Task</em>'.
+	 * @see AppliCitoyenne.simuV1.StructuredTask
+	 * @generated
+	 */
+	EClass getStructuredTask();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Task <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Task</em>'.
+	 * @see AppliCitoyenne.simuV1.Task
+	 * @generated
+	 */
+	EClass getTask();
+
+	/**
+	 * Returns the meta object for the attribute '{@link AppliCitoyenne.simuV1.Task#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see AppliCitoyenne.simuV1.Task#getName()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_Name();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.SimpleTask <em>Simple Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Simple Task</em>'.
+	 * @see AppliCitoyenne.simuV1.SimpleTask
+	 * @generated
+	 */
+	EClass getSimpleTask();
+
+	/**
+	 * Returns the meta object for the reference list '{@link AppliCitoyenne.simuV1.SimpleTask#getCompatibleaction2detect <em>Compatibleaction2detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Compatibleaction2detect</em>'.
+	 * @see AppliCitoyenne.simuV1.SimpleTask#getCompatibleaction2detect()
+	 * @see #getSimpleTask()
+	 * @generated
+	 */
+	EReference getSimpleTask_Compatibleaction2detect();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.RecurrentTask <em>Recurrent Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Recurrent Task</em>'.
+	 * @see AppliCitoyenne.simuV1.RecurrentTask
+	 * @generated
+	 */
+	EClass getRecurrentTask();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link AppliCitoyenne.simuV1.RecurrentTask#getSubtask <em>Subtask</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Subtask</em>'.
+	 * @see AppliCitoyenne.simuV1.RecurrentTask#getSubtask()
+	 * @see #getRecurrentTask()
+	 * @generated
+	 */
+	EReference getRecurrentTask_Subtask();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.GameTypes <em>Game Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Game Types</em>'.
+	 * @see AppliCitoyenne.simuV1.GameTypes
+	 * @generated
+	 */
+	EClass getGameTypes();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.GameTypes#getGametype <em>Gametype</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Gametype</em>'.
+	 * @see AppliCitoyenne.simuV1.GameTypes#getGametype()
+	 * @see #getGameTypes()
+	 * @generated
+	 */
+	EReference getGameTypes_Gametype();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Actions2Detect <em>Actions2 Detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Actions2 Detect</em>'.
+	 * @see AppliCitoyenne.simuV1.Actions2Detect
+	 * @generated
+	 */
+	EClass getActions2Detect();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link AppliCitoyenne.simuV1.Actions2Detect#getAction2detect <em>Action2detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Action2detect</em>'.
+	 * @see AppliCitoyenne.simuV1.Actions2Detect#getAction2detect()
+	 * @see #getActions2Detect()
+	 * @generated
+	 */
+	EReference getActions2Detect_Action2detect();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.TaskComp <em>Task Comp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Task Comp</em>'.
+	 * @see AppliCitoyenne.simuV1.TaskComp
+	 * @generated
+	 */
+	EClass getTaskComp();
+
+	/**
+	 * Returns the meta object for the reference '{@link AppliCitoyenne.simuV1.TaskComp#getAction2detect <em>Action2detect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Action2detect</em>'.
+	 * @see AppliCitoyenne.simuV1.TaskComp#getAction2detect()
+	 * @see #getTaskComp()
+	 * @generated
+	 */
+	EReference getTaskComp_Action2detect();
+
+	/**
+	 * Returns the meta object for the reference '{@link AppliCitoyenne.simuV1.TaskComp#getNewspeciessurvey <em>Newspeciessurvey</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Newspeciessurvey</em>'.
+	 * @see AppliCitoyenne.simuV1.TaskComp#getNewspeciessurvey()
+	 * @see #getTaskComp()
+	 * @generated
+	 */
+	EReference getTaskComp_Newspeciessurvey();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constraint</em>'.
+	 * @see AppliCitoyenne.simuV1.Constraint
+	 * @generated
+	 */
+	EClass getConstraint();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.BasicSurveyExistence <em>Basic Survey Existence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Basic Survey Existence</em>'.
+	 * @see AppliCitoyenne.simuV1.BasicSurveyExistence
+	 * @generated
+	 */
+	EClass getBasicSurveyExistence();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.SimpleSurveyExistence <em>Simple Survey Existence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Simple Survey Existence</em>'.
+	 * @see AppliCitoyenne.simuV1.SimpleSurveyExistence
+	 * @generated
+	 */
+	EClass getSimpleSurveyExistence();
+
+	/**
+	 * Returns the meta object for class '{@link AppliCitoyenne.simuV1.ReliableBasicSurveyExistence <em>Reliable Basic Survey Existence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reliable Basic Survey Existence</em>'.
+	 * @see AppliCitoyenne.simuV1.ReliableBasicSurveyExistence
+	 * @generated
+	 */
+	EClass getReliableBasicSurveyExistence();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2128,6 +3040,22 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EReference APP_DESC__BOTANICALFLORE = eINSTANCE.getAppDesc_Botanicalflore();
+
+		/**
+		 * The meta object literal for the '<em><b>Gametypes</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APP_DESC__GAMETYPES = eINSTANCE.getAppDesc_Gametypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Actions2detect</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APP_DESC__ACTIONS2DETECT = eINSTANCE.getAppDesc_Actions2detect();
 
 		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.InventoryObjectiveImpl <em>Inventory Objective</em>}' class.
@@ -2528,6 +3456,38 @@ public interface SimuV1Package extends EPackage {
 		EReference ACTIVITY__GAMEOBJECTIVE = eINSTANCE.getActivity_Gameobjective();
 
 		/**
+		 * The meta object literal for the '<em><b>Instruction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY__INSTRUCTION = eINSTANCE.getActivity_Instruction();
+
+		/**
+		 * The meta object literal for the '<em><b>Game Zone</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__GAME_ZONE = eINSTANCE.getActivity_GameZone();
+
+		/**
+		 * The meta object literal for the '<em><b>Gametypecomp</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__GAMETYPECOMP = eINSTANCE.getActivity_Gametypecomp();
+
+		/**
+		 * The meta object literal for the '<em><b>Gametype</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__GAMETYPE = eINSTANCE.getActivity_Gametype();
+
+		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.BotanicalFloreImpl <em>Botanical Flore</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2590,14 +3550,6 @@ public interface SimuV1Package extends EPackage {
 		EClass SPECIES = eINSTANCE.getSpecies();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SPECIES__NAME = eINSTANCE.getSpecies_Name();
-
-		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GenderImpl <em>Gender</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2606,14 +3558,6 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EClass GENDER = eINSTANCE.getGender();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENDER__NAME = eINSTANCE.getGender_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Species</b></em>' containment reference list feature.
@@ -2658,6 +3602,14 @@ public interface SimuV1Package extends EPackage {
 		 * @generated
 		 */
 		EClass TARGET = eINSTANCE.getTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TARGET__NAME = eINSTANCE.getTarget_Name();
 
 		/**
 		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GameObjectiveImpl <em>Game Objective</em>}' class.
@@ -2732,6 +3684,14 @@ public interface SimuV1Package extends EPackage {
 		EClass OBJECTIVE = eINSTANCE.getObjective();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECTIVE__NAME = eINSTANCE.getObjective_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Incompatible Objectives</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2740,12 +3700,288 @@ public interface SimuV1Package extends EPackage {
 		EReference OBJECTIVE__INCOMPATIBLE_OBJECTIVES = eINSTANCE.getObjective_IncompatibleObjectives();
 
 		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GameTypeImpl <em>Game Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.GameTypeImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameType()
+		 * @generated
+		 */
+		EClass GAME_TYPE = eINSTANCE.getGameType();
+
+		/**
+		 * The meta object literal for the '<em><b>Compatiblegameobjective</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_TYPE__COMPATIBLEGAMEOBJECTIVE = eINSTANCE.getGameType_Compatiblegameobjective();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBJECTIVE__NAME = eINSTANCE.getObjective_Name();
+		EAttribute GAME_TYPE__NAME = eINSTANCE.getGameType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Compatibleinventoryobjective</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_TYPE__COMPATIBLEINVENTORYOBJECTIVE = eINSTANCE.getGameType_Compatibleinventoryobjective();
+
+		/**
+		 * The meta object literal for the '<em><b>Compatiblelearningobjective</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_TYPE__COMPATIBLELEARNINGOBJECTIVE = eINSTANCE.getGameType_Compatiblelearningobjective();
+
+		/**
+		 * The meta object literal for the '<em><b>Instruction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_TYPE__INSTRUCTION = eINSTANCE.getGameType_Instruction();
+
+		/**
+		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_TYPE__CONSTRAINT = eINSTANCE.getGameType_Constraint();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.Action2DetectImpl <em>Action2 Detect</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.Action2DetectImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getAction2Detect()
+		 * @generated
+		 */
+		EClass ACTION2_DETECT = eINSTANCE.getAction2Detect();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION2_DETECT__NAME = eINSTANCE.getAction2Detect_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Compatibleinventoryobjective</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION2_DETECT__COMPATIBLEINVENTORYOBJECTIVE = eINSTANCE.getAction2Detect_Compatibleinventoryobjective();
+
+		/**
+		 * The meta object literal for the '<em><b>Optionaltarget</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION2_DETECT__OPTIONALTARGET = eINSTANCE.getAction2Detect_Optionaltarget();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GameTypeCompImpl <em>Game Type Comp</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.GameTypeCompImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameTypeComp()
+		 * @generated
+		 */
+		EClass GAME_TYPE_COMP = eINSTANCE.getGameTypeComp();
+
+		/**
+		 * The meta object literal for the '<em><b>Gametype</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_TYPE_COMP__GAMETYPE = eINSTANCE.getGameTypeComp_Gametype();
+
+		/**
+		 * The meta object literal for the '<em><b>Times</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GAME_TYPE_COMP__TIMES = eINSTANCE.getGameTypeComp_Times();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.StructuredTaskImpl <em>Structured Task</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.StructuredTaskImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getStructuredTask()
+		 * @generated
+		 */
+		EClass STRUCTURED_TASK = eINSTANCE.getStructuredTask();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.TaskImpl <em>Task</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.TaskImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getTask()
+		 * @generated
+		 */
+		EClass TASK = eINSTANCE.getTask();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__NAME = eINSTANCE.getTask_Name();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.SimpleTaskImpl <em>Simple Task</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.SimpleTaskImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getSimpleTask()
+		 * @generated
+		 */
+		EClass SIMPLE_TASK = eINSTANCE.getSimpleTask();
+
+		/**
+		 * The meta object literal for the '<em><b>Compatibleaction2detect</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SIMPLE_TASK__COMPATIBLEACTION2DETECT = eINSTANCE.getSimpleTask_Compatibleaction2detect();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.RecurrentTaskImpl <em>Recurrent Task</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.RecurrentTaskImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getRecurrentTask()
+		 * @generated
+		 */
+		EClass RECURRENT_TASK = eINSTANCE.getRecurrentTask();
+
+		/**
+		 * The meta object literal for the '<em><b>Subtask</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECURRENT_TASK__SUBTASK = eINSTANCE.getRecurrentTask_Subtask();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.GameTypesImpl <em>Game Types</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.GameTypesImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getGameTypes()
+		 * @generated
+		 */
+		EClass GAME_TYPES = eINSTANCE.getGameTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Gametype</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GAME_TYPES__GAMETYPE = eINSTANCE.getGameTypes_Gametype();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.Actions2DetectImpl <em>Actions2 Detect</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.Actions2DetectImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getActions2Detect()
+		 * @generated
+		 */
+		EClass ACTIONS2_DETECT = eINSTANCE.getActions2Detect();
+
+		/**
+		 * The meta object literal for the '<em><b>Action2detect</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIONS2_DETECT__ACTION2DETECT = eINSTANCE.getActions2Detect_Action2detect();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.TaskCompImpl <em>Task Comp</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.TaskCompImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getTaskComp()
+		 * @generated
+		 */
+		EClass TASK_COMP = eINSTANCE.getTaskComp();
+
+		/**
+		 * The meta object literal for the '<em><b>Action2detect</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK_COMP__ACTION2DETECT = eINSTANCE.getTaskComp_Action2detect();
+
+		/**
+		 * The meta object literal for the '<em><b>Newspeciessurvey</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TASK_COMP__NEWSPECIESSURVEY = eINSTANCE.getTaskComp_Newspeciessurvey();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.ConstraintImpl <em>Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.ConstraintImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getConstraint()
+		 * @generated
+		 */
+		EClass CONSTRAINT = eINSTANCE.getConstraint();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.BasicSurveyExistenceImpl <em>Basic Survey Existence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.BasicSurveyExistenceImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getBasicSurveyExistence()
+		 * @generated
+		 */
+		EClass BASIC_SURVEY_EXISTENCE = eINSTANCE.getBasicSurveyExistence();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.SimpleSurveyExistenceImpl <em>Simple Survey Existence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.SimpleSurveyExistenceImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getSimpleSurveyExistence()
+		 * @generated
+		 */
+		EClass SIMPLE_SURVEY_EXISTENCE = eINSTANCE.getSimpleSurveyExistence();
+
+		/**
+		 * The meta object literal for the '{@link AppliCitoyenne.simuV1.impl.ReliableBasicSurveyExistenceImpl <em>Reliable Basic Survey Existence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see AppliCitoyenne.simuV1.impl.ReliableBasicSurveyExistenceImpl
+		 * @see AppliCitoyenne.simuV1.impl.SimuV1PackageImpl#getReliableBasicSurveyExistence()
+		 * @generated
+		 */
+		EClass RELIABLE_BASIC_SURVEY_EXISTENCE = eINSTANCE.getReliableBasicSurveyExistence();
 
 	}
 

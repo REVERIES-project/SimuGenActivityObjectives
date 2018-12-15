@@ -73,6 +73,7 @@ public class BotanicalStatImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return SimuV1Package.Literals.BOTANICAL_STAT;
 	}
@@ -141,10 +142,11 @@ public class BotanicalStatImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_STAT__DIRECT_IDENTIFICATION:
-				return new Integer(getDirectIdentification());
+				return getDirectIdentification();
 			case SimuV1Package.BOTANICAL_STAT__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -157,10 +159,11 @@ public class BotanicalStatImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_STAT__DIRECT_IDENTIFICATION:
-				setDirectIdentification(((Integer)newValue).intValue());
+				setDirectIdentification((Integer)newValue);
 				return;
 			case SimuV1Package.BOTANICAL_STAT__TARGET:
 				setTarget((Target)newValue);
@@ -174,6 +177,7 @@ public class BotanicalStatImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_STAT__DIRECT_IDENTIFICATION:
@@ -191,6 +195,7 @@ public class BotanicalStatImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SimuV1Package.BOTANICAL_STAT__DIRECT_IDENTIFICATION:
@@ -206,6 +211,7 @@ public class BotanicalStatImpl extends MinimalEObjectImpl.Container implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
